@@ -1,0 +1,279 @@
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.clock {
+    width: 65vw;
+    height: 55vw;
+    max-width: 900px;
+    max-height: 700px;
+    background-image: url('./images/clock.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 2; /* Ensure the clock is above the background */
+}
+
+.hand {
+    width: 50%;
+    height: 6px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform-origin: 0% 50%;
+    border-radius: 6px;
+    z-index: 3; /* Ensure hands are on top of the clock */
+}
+
+.hour {
+    width: 23%;
+    height: 5px;
+    z-index: 3;
+}
+
+.minute {
+    width: 32%;
+    height: 5px;
+    z-index: 2;
+}
+
+.second {
+    width: 37%;
+    height: 2px;
+    background-color: black;
+    z-index: 1;
+}
+
+.center-dot {
+    width: 15px;
+    height: 15px;
+    background-color: black;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 4; /* Ensure the center dot is on top */
+}
+
+/* Responsive clickable areas for clock numbers */
+.clock-number {
+    position: absolute;
+    width: 5vw;
+    height: 5vw;
+    max-width: 50px;
+    max-height: 50px;
+    background-color: rgba(255, 0, 0, 0); /* Make it transparent */
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 5; /* Ensure clickable areas are above everything else */
+}
+
+.fastForward {
+    position: absolute;
+    top: 2%; left: 2%;
+    z-index: 6;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    width: 20%;
+    height: 20%;
+}
+
+
+#number-12 { top: 6%; left: 47%; }
+#number-1 { top: 13%; left: 63%; }
+#number-2 { top: 27%; left: 75%; }
+#number-3 { top: 46%; left: 80%; }
+#number-4 { top: 66%; left: 75%; }
+#number-5 { top: 81%; left: 64%; }
+#number-6 { top: 87%; left: 47%; }
+#number-7 { top: 81%; left: 30%; }
+#number-8 { top: 66%; left: 18%; }
+#number-9 { top: 46%; left: 14%; }
+#number-10 { top: 27%; left: 20%; }
+#number-11 { top: 13%; left: 31%; }
+
+/* Song container styles */
+.songs-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1; /* Ensure songs are below the clickable areas */
+}
+
+.song {
+    opacity: 0;
+    position: absolute;
+    display: flex; 
+    flex-direction: row;
+    align-items: top;
+    text-align: center;
+}
+
+.song iframe {
+    width: 5vw;
+    height: 10vw;
+}
+
+.song img {
+    width: 175px;
+    height: 233px;
+    object-fit: cover;
+}
+
+.song p {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #000;
+    margin-top: 10px;
+}
+
+/* Layout adjustments for widest screens */
+@media (min-width: 1450px) {
+    .song img {
+        width: 203px;
+        height: 270px;
+    }
+
+    .song p {
+        font-size: 16px;
+    }
+
+    #song-1 {
+        top: 5%;
+        left: 5%;
+    }
+    
+    #song-2 {
+        top: 35%;
+        left: 5%;
+    }
+    
+    #song-3 {
+        top: 65%;
+        left: 5%;
+    }
+    
+    #song-4 {
+        top: 5%;
+        right: 5%;
+    }
+    
+    #song-5 {
+        top: 35%;
+        right: 5%;
+    }
+    
+    #song-6 {
+        top: 65%;
+        right: 5%;
+    }
+}
+
+
+/* Layout adjustments for wider screens */
+@media (min-width: 951px) and (max-width: 1449px) {
+    .song img {
+        width: 149px;
+        height: 199px;
+    }
+
+    .song p {
+        font-size: 16px;
+    }
+
+    #song-1 {
+        top: 10%;
+        left: 2%;
+    }
+    
+    #song-2 {
+        top: 40%;
+        left: 2%;
+    }
+    
+    #song-3 {
+        top: 70%;
+        left: 2%;
+    }
+    
+    #song-4 {
+        top: 10%;
+        left: 83%;
+    }
+    
+    #song-5 {
+        top: 40%;
+        left: 83%;
+    }
+    
+    #song-6 {
+        top: 70%;
+        left: 83%;
+    }
+}
+
+/* Adjust layout for mobile screens */
+@media (max-width: 950px) {
+    .songs-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .song img {
+        width: 112px;
+        height: 149px;
+    }
+
+    .song p {
+        font-size: 12px;
+    }
+
+    #song-1 {
+        top: 12%;
+        left: 10%;
+    }
+    
+    #song-2 {
+        top: 12%;
+        left: 43%;
+    }
+    
+    #song-3 {
+        top: 12%;
+        left: 75%;
+    }
+    
+    #song-4 {
+        bottom: 12%;
+        left: 10%;
+    }
+    
+    #song-5 {
+        bottom: 12%;
+        left: 43%;
+    }
+    
+    #song-6 {
+        bottom: 12%;
+        left: 75%;
+    }
+}
+
