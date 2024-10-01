@@ -731,6 +731,9 @@ document.addEventListener('DOMContentLoaded', function () {
         let text = document.getElementsByClassName('text-section')[0];
         text.style.color = amOrPm === "am" ? '#222222' : '#F9F6EE';
 
+        let blur = document.getElementsByClassName('background-blur')[0];
+        blur.style.background = amOrPm === "am" ? '#F9F6EE' : '#222222';
+
         amOrPm === "am" ? document.body.style.backgroundColor = '#F9F6EE' : document.body.style.backgroundColor = '#222222';
     }
 
@@ -786,8 +789,9 @@ document.addEventListener('DOMContentLoaded', function () {
             newIframe.allow = "autoplay; encrypted-media"; // Allow autoplay
 
             videoContainer.innerHTML = ''; // Clear any previous video
-            //videoContainer.id = "overlay";
             videoContainer.appendChild(newIframe); // Add new video iframe to the background
+
+            
 
             // Ensure the image is visible
             img.style.opacity = "1"; // Make sure the image is visible
@@ -801,7 +805,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function getSrc(songId) {
         let songNo = songId.split('-')[1];
-        return songLinks[timeOfDay][hours % 12 === 0 ? '12' : hours % 12][songNo].link + "?autoplay=1";
+        return songLinks[timeOfDay][hours % 12 === 0 ? '12' : hours % 12][songNo].link + "?autoplay=1&controls=0&rel=0";
     }
     
     // Function to remove any playing video and clear effects

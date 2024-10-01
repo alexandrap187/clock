@@ -33,18 +33,17 @@ body {
     font-style: normal;
   }
   
-.overlay {
-    position: fixed;
+  .background-blur {
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgb(255, 255, 255); /* Black background with 50% opacity */
-    opacity: .59;
-    display: none; /* Initially hidden */
-    z-index: 1; /* Ensure it appears on top of other elements */
-  }
-
+    z-index: -1; /* Ensure it's behind all other elements */
+    background: rgba(255, 255, 255); /* A semi-transparent white background */
+    opacity: .7;
+    backdrop-filter: blur(1100px); /* Apply blur effect */
+}
 
 .video-container {
     position: fixed;
@@ -52,8 +51,11 @@ body {
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Behind other elements */
+    z-index: -2; /* Behind other elements */
     overflow: hidden;
+    backdrop-filter: blur(1100px); /* Apply blur effect */
+
+
 }
 
 .video-background {
@@ -229,7 +231,7 @@ body {
     }
     
     #song-2 {
-        top: 43%;
+        top: 43%; 
         left: 5%;
     }
     
