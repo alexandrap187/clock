@@ -650,6 +650,9 @@ document.addEventListener('DOMContentLoaded', function () {
     setSongs(now.getHours() % 12, true);
     let prevHour = -1;
 
+    const videoContainer = document.createElement('div');
+    videoContainer.classList.add('video-container');
+    document.body.appendChild(videoContainer);
 
     // Function to set the clock based on the current time
     function setClock() {
@@ -739,51 +742,59 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementsByClassName('second')[0].style.opacity = '1';
     });
 
+
+    // Loop over each song element
     songs.forEach(song => {
         song.addEventListener('click', () => {
-            let removed = false;
-            removed = removeVideos(song);
-            if (removed) {
-                return;
-            }
-            iframe = document.createElement('iframe');
-
-            iframe.src = getSrc(song.id);
-            iframe.style.border = "5px groove gray"; 
+            const iframe = videoContainer.querySelector('iframe'); // Check if there's any video in the background
+            const img = song.querySelector('img'); // Select the image inside the song container
             
-            // include the iframe on the song element
-            if (song.id.split('-')[1] <= 3) {
-                song.append(iframe);
-            } else {
-                song.prepend(iframe);
+            // If the video from the same song is playing, toggle it off
+            if (iframe && iframe.src === getSrc(song.id)) {
+                removeVideos(); // Remove the iframe and halo effect
+                return; // Exit early, as we toggled the video off
             }
-        })
-    })
 
+            // Otherwise, toggle off other videos and toggle on this one
+            removeVideos(); // Remove videos from other songs
+
+            // Create a new iframe and add it to the background
+            const newIframe = document.createElement('iframe');
+            newIframe.src = getSrc(song.id); // Get the correct video link
+            newIframe.classList.add('video-background');
+            newIframe.allow = "autoplay; encrypted-media"; // Allow autoplay
+
+            videoContainer.innerHTML = ''; // Clear any previous video
+            videoContainer.appendChild(newIframe); // Add new video iframe to the background
+
+            // Ensure the image is visible
+            img.style.opacity = "1"; // Make sure the image is visible
+            img.style.display = "block"; // Ensure the image is displayed if it's hidden
+
+            // Add halo class to the clicked song's image
+            img.classList.add('halo');
+        });
+    });
+
+    
     function getSrc(songId) {
         let songNo = songId.split('-')[1];
-
         return songLinks[timeOfDay][hours % 12 === 0 ? '12' : hours % 12][songNo].link;
     }
-
-    function removeVideos(song) {
-        let removed = false;
-        songs.forEach(secondSong => {
-            // Check if the song has an iframe
-            const iframe = secondSong.querySelector('iframe'); // or song.getElementsByTagName('iframe')[0]
-        
-            // If an iframe exists, remove it
-            if (iframe) {
-                secondSong.removeChild(iframe);
-
-                if (song === secondSong) {
-                    removed = true;
-                }
+    
+    // Function to remove any playing video and clear effects
+    function removeVideos() {
+        // Iterate over all song elements and remove iframe and halo effects
+        songs.forEach(song => {
+            const img = song.querySelector('img');
+            if (img) {
+                img.classList.remove('halo'); // Remove halo for all songs
             }
         });
-        return removed;
+    
+        // Clear the video background container
+        videoContainer.innerHTML = ''; 
     }
-
 });
 
 
