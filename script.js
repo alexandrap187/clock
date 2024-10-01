@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 },
                 '3' : {
                     'name' : 'Parachutes - Coldplay',
-                    'link' : 'https://www.youtube.com/embed/r4l9bFqgMaQ'
+                    'link' : 'https://www.youtube.com/embed/v77WFwYtUE0'
                 },
                 '4' : {
                     'name' : 'I Don\'t Wanna Be Okay Without You',
@@ -650,6 +650,8 @@ document.addEventListener('DOMContentLoaded', function () {
     setSongs(now.getHours() % 12, true);
     let prevHour = -1;
 
+    setTime(now.getHours() % 12, timeOfDay);
+
     const videoContainer = document.createElement('div');
     videoContainer.classList.add('video-container');
     document.body.appendChild(videoContainer);
@@ -684,6 +686,8 @@ document.addEventListener('DOMContentLoaded', function () {
             timeOfDay = (hours % 24) > 11 ? "pm" : "am";
             setSongs(hours % 12, false);
             setBackground(timeOfDay);    
+            setTime(hours % 12, timeOfDay);
+            setFastForwardImage(timeOfDay);
         }
         prevHour = hours;
     }
@@ -691,6 +695,11 @@ document.addEventListener('DOMContentLoaded', function () {
     setInterval(setClock, 1);
     setClock();
 
+    function setTime(hour, amOrPm) {
+        hour = hour === 0 ? 12 : hour;
+        let text = document.getElementsByClassName('miriam-libre-regular')[0];
+        text.innerText = "now playing music that feels like " + hour + " " + amOrPm;
+    }
 
     async function setSongs(hour, firstSongs) {
         if (!firstSongs) {
@@ -719,17 +728,20 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     function setBackground(amOrPm) {
+        let text = document.getElementsByClassName('text-section')[0];
+        text.style.color = amOrPm === "am" ? '#222222' : '#F9F6EE';
+
         amOrPm === "am" ? document.body.style.backgroundColor = '#F9F6EE' : document.body.style.backgroundColor = '#222222';
     }
 
     const fastForward = document.querySelectorAll('.fastForward')[0];
 
     fastForward.addEventListener('mouseover', () => {
-        fastForward.src = 'images/skip/whiteFill.png';
+        fastForward.src = timeOfDay==="am" ? 'images/skip/blackFill.png' : 'images/skip/whiteFill.png';
     });
 
     fastForward.addEventListener('mouseout', () => {
-        fastForward.src = 'images/skip/whiteEmpty.png';
+        fastForward.src = timeOfDay==="am" ? 'images/skip/blackEmpty.png' : 'images/skip/whiteEmpty.png';
     });
 
     fastForward.addEventListener('mousedown', () => {
@@ -743,6 +755,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
         document.getElementsByClassName('second')[0].style.opacity = '1';
     });
+
+    function setFastForwardImage(timeOfDay) {
+        let icon = timeOfDay === "am" ? "black" : "white";
+        icon += fastForwarding ? "Fill" : "Empty";
+        fastForward.src = "images/skip/" + icon + ".png";
+    }
+    setFastForwardImage(timeOfDay);
 
 
     // Loop over each song element
@@ -767,6 +786,7 @@ document.addEventListener('DOMContentLoaded', function () {
             newIframe.allow = "autoplay; encrypted-media"; // Allow autoplay
 
             videoContainer.innerHTML = ''; // Clear any previous video
+            //videoContainer.id = "overlay";
             videoContainer.appendChild(newIframe); // Add new video iframe to the background
 
             // Ensure the image is visible

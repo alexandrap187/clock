@@ -15,6 +15,37 @@ body {
     flex-direction: column;
 }
 
+.text-section {
+    margin-top: -70px;
+    text-align: center;
+    color: black;
+}
+
+.text-section p {
+    font-size: 30px;
+    line-height: 1.6;
+}
+
+
+.miriam-libre-regular {
+    font-family: "Miriam Libre", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+  }
+  
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(255, 255, 255); /* Black background with 50% opacity */
+    opacity: .59;
+    display: none; /* Initially hidden */
+    z-index: 1; /* Ensure it appears on top of other elements */
+  }
+
+
 .video-container {
     position: fixed;
     top: 0;
@@ -90,6 +121,8 @@ body {
     z-index: 4; /* Ensure the center dot is on top */
 }
 
+
+
 /* Responsive clickable areas for clock numbers */
 .clock-number {
     position: absolute;
@@ -114,16 +147,17 @@ body {
     height: 15%;
 }
 
-.halo {
+/* .halo {
     border: 5px solid white;
     border-radius: 10px;
     box-shadow: 0 0 10px white;
-}
+} */
 
 .song img.halo {
     border: 5px solid white;
     border-radius: 10px;
     box-shadow: 0 0 10px white;
+    box-sizing: border-box; /* Ensures border is part of the element's width */
 }
 
 
@@ -190,32 +224,32 @@ body {
     }
 
     #song-1 {
-        top: 5%;
+        top: 13%;
         left: 5%;
     }
     
     #song-2 {
-        top: 35%;
+        top: 43%;
         left: 5%;
     }
     
     #song-3 {
-        top: 65%;
+        top: 73%;
         left: 5%;
     }
     
     #song-4 {
-        top: 5%;
+        top: 13%;
         right: 5%;
     }
     
     #song-5 {
-        top: 35%;
+        top: 43%;
         right: 5%;
     }
     
     #song-6 {
-        top: 65%;
+        top: 73%;
         right: 5%;
     }
 }
@@ -233,32 +267,32 @@ body {
     }
 
     #song-1 {
-        top: 10%;
+        top: 20%;
         left: 2%;
     }
     
     #song-2 {
-        top: 40%;
+        top: 50%;
         left: 2%;
     }
     
     #song-3 {
-        top: 70%;
+        top: 80%;
         left: 2%;
     }
     
     #song-4 {
-        top: 10%;
+        top: 20%;
         left: 83%;
     }
     
     #song-5 {
-        top: 40%;
+        top: 50%;
         left: 83%;
     }
     
     #song-6 {
-        top: 70%;
+        top: 80%;
         left: 83%;
     }
 }
