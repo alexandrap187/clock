@@ -654,6 +654,8 @@ document.addEventListener('DOMContentLoaded', function () {
     videoContainer.classList.add('video-container');
     document.body.appendChild(videoContainer);
 
+    setSongs(hours % 12, true);
+
     // Function to set the clock based on the current time
     function setClock() {
         const now = new Date();
@@ -779,7 +781,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
     function getSrc(songId) {
         let songNo = songId.split('-')[1];
-        return songLinks[timeOfDay][hours % 12 === 0 ? '12' : hours % 12][songNo].link;
+        return songLinks[timeOfDay][hours % 12 === 0 ? '12' : hours % 12][songNo].link + "?autoplay=1";
     }
     
     // Function to remove any playing video and clear effects
