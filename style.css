@@ -1,48 +1,110 @@
 body {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    overflow: hidden;
+    background-color: #F5F5F5;
 }
 
 .container {
-    position: relative;
+    display: flex; /* Use flexbox to align children in a row */
+    overflow: hidden;
+    justify-content: space-evenly; /* Space between columns */
+    align-items: flex-start; /* Align items vertically in the center */
+    height: 100vh; /* Set the height to fill the viewport */
+}
+
+.songContainer {
     display: flex;
-    justify-content: center;
+    flex-direction: column; /* Arrange items in a column */
+    padding-top: 10vh;
     align-items: center;
+    padding-bottom: 10vh;
+    justify-content: space-evenly; /* Align items at the start */
+    align-items: center; /* Center items horizontally */
+    width: 15%; /* Set width to take a quarter of the space */
+    box-sizing: border-box; /* Include padding in the total width/height */
+    padding: 0px 0px; /* Optional: Add padding */
+    height: 100%; /* Set height to 100% of the parent container */
+    overflow-y: auto; /* Allow vertical scrolling if necessary */
+    margin-left: 10vw;
+    overflow: visible;
+}
+
+.songContainer2 {
+    display: flex;
+    flex-direction: column; /* Arrange items in a column */
+    padding-top: 10vh;
+    align-items: center;
+    padding-bottom: 10vh;
+    justify-content: space-evenly; /* Align items at the start */
+    align-items: center; /* Center items horizontally */
+    width: 15%; /* Set width to take a quarter of the space */
+    box-sizing: border-box; /* Include padding in the total width/height */
+    padding: 0px 0px; /* Optional: Add padding */
+    height: 100%; /* Set height to 100% of the parent container */
+    overflow-y: auto; /* Allow vertical scrolling if necessary */
+    margin-right: 10vw;
+    overflow: visible;
+}
+
+.center-container {
+    display: flex;
+    margin-top: 10vh;
     flex-direction: column;
+    justify-content: flex-start;
+    width: 38%;
 }
-
-.text-section {
-    margin-top: -70px;
-    text-align: center;
-    color: black;
-}
-
-.text-section p {
-    font-size: 30px;
-    line-height: 1.6;
-}
-
-
-.miriam-libre-regular {
-    font-family: "Miriam Libre", sans-serif;
-    font-weight: 100;
-    font-style: normal;
-  }
-  
-  .background-blur {
-    position: absolute;
-    top: 0;
-    left: 0;
+.clock {
     width: 100%;
-    height: 100%;
-    z-index: -1; /* Ensure it's behind all other elements */
-    background: rgba(255, 255, 255); /* A semi-transparent white background */
-    opacity: .7;
-    backdrop-filter: blur(1100px); /* Apply blur effect */
+    height: 50vmin; /* Set a responsive height for the clock */
+    background-image: url('./cd.png');
+    background-size: contain; /* Scale the image to fit the clock div */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the background image */
+    
+}
+
+.timeTape {
+    width: 38vw;
+    height: 10vh;
+    background-image: url('./images/TimeTape/10am.png');
+    background-size: contain; /* Scale the image to fit the clock div */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the background image */
+}
+
+.fastForward {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    /* align-items: center; Center vertically */
+
+    align-items: center;
+    width: 38vw;
+    height: 10vh;
+    background-image: url('./images/SmallTape.png');
+    background-size: contain; /* Scale the image to fit the clock div */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the background image */
+
+}
+
+.fastForward img {
+    height: 40%;
+    transform: translateY(-42%); /* Move the image up by 10 pixels */
+    background-size: contain; /* Scale the image to fit the clock div */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-position: center; /* Center the background image */
+}
+
+
+.song {
+    position: relative; /* Allows positioning of child elements */
+    /* transform: rotate(15deg); */
+    background-image: url("./polaroid.png");
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    background-position: center;
+    background-size: contain; /* Keep the original size of the polaroid */
+    background-repeat: no-repeat;
+    width: 19.8vmin; /* Set width to a proportional size based on viewport */
+    height: 24vmin; /* Set height to a proportional size based on viewport */
 }
 
 .video-container {
@@ -68,92 +130,73 @@ body {
     pointer-events: none; /* Prevent interaction with the video */
 }
 
-.clock {
-    width: 65vw;
-    height: 55vw;
-    max-width: 900px;
-    max-height: 700px;
-    background-image: url('./images/clock.png');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    z-index: 2; /* Ensure the clock is above the background */
+
+#song-1 {
+    transform: rotate(2deg); /* Slight rotation */
 }
 
-.hand {
-    width: 50%;
-    height: 6px;
-    background-color: black;
+#song-2 {
+    transform: rotate(-3deg); /* Rotate in the opposite direction */
+}
+
+#song-3 {
+    transform: rotate(4deg); /* Larger rotation */
+}
+
+#song-4 {
+    transform: rotate(-4deg); /* Rotate in the opposite direction */
+}
+
+#song-5 {
+    transform: rotate(3deg); /* Slight rotation */
+}
+
+#song-6 {
+    transform: rotate(-1deg); /* Rotate in the opposite direction */
+}
+
+
+
+.song img {
+    top: 5%;
+    left: 10%;
+    position: absolute; /* Position the image inside the container */
+    width: 80%; /* Image fills 80% of the .song container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.songText {
     position: absolute;
-    top: 50%;
+    top: 74%; /* Position text relative to the .song container */
     left: 50%;
-    transform-origin: 0% 50%;
-    border-radius: 6px;
-    z-index: 3; /* Ensure hands are on top of the clock */
+    width: 80%; /* Text width relative to the song container */
+    transform: translateX(-50%); /* Center text */
+    font-family: "Mynerve";
+    font-size: 1.5vmin; /* Font size scales with viewport size */
+    text-align: center; /* Center text alignment */
 }
 
-.hour {
-    width: 23%;
-    height: 5px;
-    z-index: 3;
-}
-
-.minute {
-    width: 32%;
-    height: 5px;
-    z-index: 2;
-}
-
-.second {
-    width: 37%;
-    height: 2px;
-    background-color: black;
-    z-index: 1;
-}
-
-.center-dot {
-    width: 15px;
-    height: 15px;
-    background-color: black;
+.songOverlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 4; /* Ensure the center dot is on top */
+    top: 0;
+    left: 0;
+    width: 100%; /* Overlay covers the entire song */
+    height: 100%; /* Overlay covers the entire song */
+    background-color: rgba(255, 255, 255, 0.25); /* The desired color with opacity */
+    z-index: 1; /* Ensure it overlays the content */
 }
 
-
-
-/* Responsive clickable areas for clock numbers */
-.clock-number {
+.background-blur {
     position: absolute;
-    width: 5vw;
-    height: 5vw;
-    max-width: 50px;
-    max-height: 50px;
-    background-color: rgba(255, 0, 0, 0); /* Make it transparent */
-    border-radius: 50%;
-    cursor: pointer;
-    z-index: 5; /* Ensure clickable areas are above everything else */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it's behind all other elements */
+    background: rgba(255, 255, 255); /* A semi-transparent white background */
+    opacity: .7;
+    backdrop-filter: blur(1100px); /* Apply blur effect */
 }
-
-.fastForward {
-    position: absolute;
-    top: 105%; left: 40%;
-    z-index: 6;
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    width: 15%;
-    height: 15%;
-}
-
-/* .halo {
-    border: 5px solid white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px white;
-} */
 
 .song img.halo {
     border: 5px solid white;
@@ -163,226 +206,136 @@ body {
 }
 
 
-
-#number-12 { top: 6%; left: 47%; }
-#number-1 { top: 13%; left: 63%; }
-#number-2 { top: 27%; left: 75%; }
-#number-3 { top: 46%; left: 80%; }
-#number-4 { top: 66%; left: 75%; }
-#number-5 { top: 81%; left: 64%; }
-#number-6 { top: 87%; left: 47%; }
-#number-7 { top: 81%; left: 30%; }
-#number-8 { top: 66%; left: 18%; }
-#number-9 { top: 46%; left: 14%; }
-#number-10 { top: 27%; left: 20%; }
-#number-11 { top: 13%; left: 31%; }
-
-/* Song container styles */
-.songs-container {
+.hand {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1; /* Ensure songs are below the clickable areas */
+    width: .15%; /* Adjust width for thin hands */
+    top: 36%; /* Position at the vertical center */
+    left: 51%; /* Position at the horizontal center */
+    transform-origin: bottom center; /* Rotate around the bottom */
+    z-index: 2; /* Ensure hands are above clock face */
 }
 
-.song {
-    opacity: 0;
-    position: absolute;
-    display: flex; 
-    flex-direction: row;
-    align-items: top;
-    text-align: center;
-}
-
-.song iframe {
-    width: 5vw;
-    height: 10vw;
-}
-
-.song img {
-    width: 175px;
-    height: 233px;
-    object-fit: cover;
-}
-
-.song p {
-    font-family: 'Arial', sans-serif;
-    font-size: 14px;
-    color: #000;
-    margin-top: 10px;
-}
-
-/* Layout adjustments for widest screens */
-@media (min-width: 1450px) {
-    .song img {
-        width: 203px;
-        height: 270px;
-    }
-
-    .song p {
-        font-size: 16px;
-    }
-
-    #song-1 {
-        top: 13%;
-        left: 6%;
-    }
-    
-    #song-2 {
-        top: 43%; 
-        left: 6%;
-    }
-    
-    #song-3 {
-        top: 73%;
-        left: 6%;
-    }
-    
-    #song-4 {
-        top: 13%;
-        right: 6%;
-    }
-    
-    #song-5 {
-        top: 43%;
-        right: 6%;
-    }
-    
-    #song-6 {
-        top: 73%;
-        right: 6%;
-    }
+.hour {
+    height: 10%; /* Shorter hand */
+    background-color: #000000; /* Color of hour hand */
+    z-index: 3;
 }
 
 
-/* Layout adjustments for wider screens */
-@media (min-width: 951px) and (max-width: 1449px) {
-    .song img {
-        width: 149px;
-        height: 199px;
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .container {
+        display: flex; /* Use flexbox to align children */
+        flex-direction: column; /* Stack items vertically */
+        justify-content: space-evenly; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        height: 100%; /* Set the height to fill the viewport */
+    }
+    
+    .songContainer {
+        display: flex;
+        flex-direction: row; /* Show songs in a row */
+        padding-top: 0vh;
+        align-items: center; /* Center items vertically */
+        padding-bottom: 0vh;
+        justify-content: space-evenly; /* Space items evenly */
+        box-sizing: border-box;
+        height: 25vh; /* Allow height to adjust based on content */
+        width: 100%; /* Full width */
+        overflow-y: hidden; /* Prevent vertical overflow */
+        margin-left: 0vw;
+        overflow: visible;
+    }
+        
+    .songContainer2 {    
+        display: flex;
+        flex-direction: row; /* Show songs in a row */
+        padding-top: 0vh;
+        align-items: center; /* Center items vertically */
+        padding-bottom: 0vh;
+        justify-content: space-evenly; /* Space items evenly */
+        box-sizing: border-box;
+        height: 25vh; /* Allow height to adjust based on content */
+        width: 100%; /* Full width */
+        overflow-y: hidden; /* Prevent vertical overflow */
+        margin-left: 0vw;
+        margin-right:0vw;
+        overflow: visible;
+    }
+    
+    .center-container {
+        width: 100%; /* Full width on mobile */
+        height: 100%;
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        margin-top: 0vh;
     }
 
-    .song p {
-        font-size: 16px;
-    }
-
-    #song-1 {
-        top: 20%;
-        left: 2%;
-    }
-    
-    #song-2 {
-        top: 50%;
-        left: 2%;
-    }
-    
-    #song-3 {
-        top: 80%;
-        left: 2%;
-    }
-    
-    #song-4 {
-        top: 20%;
-        left: 83%;
-    }
-    
-    #song-5 {
-        top: 50%;
-        left: 83%;
-    }
-    
-    #song-6 {
-        top: 80%;
-        left: 83%;
-    }
-}
-
-/* Adjust layout for mobile screens */
-@media (max-width: 950px) {
-    .songs-container {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .song img {
-        width: 112px;
-        height: 149px;
-    }
-
-    .song p {
-        font-size: 12px;
-    }
-
-    #song-1 {
-        top: 12%;
-        left: 10%;
-    }
-    
-    #song-2 {
-        top: 12%;
-        left: 43%;
-    }
-    
-    #song-3 {
-        top: 12%;
-        left: 75%;
-    }
-    
-    #song-4 {
-        bottom: 12%;
-        left: 10%;
-    }
-    
-    #song-5 {
-        bottom: 12%;
-        left: 43%;
-    }
-    
-    #song-6 {
-        bottom: 12%;
-        left: 75%;
-    }
-    .hour {
-        width: 23%;
-        height: 3px;
-        z-index: 3;
-    }
-    
-    .minute {
-        width: 32%;
-        height: 3px;
-        z-index: 2;
-    }
-    
-    .second {
-        width: 37%;
-        height: 1px;
-        background-color: black;
-        z-index: 1;
-    }
-
-    .center-dot {
-        width: 10px;
-        height: 10px;
-        background-color: black;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        border-radius: 50%;
-        z-index: 4; /* Ensure the center dot is on top */
-    }
     .fastForward {
-        position: absolute;
-        top: 2%; left: 2%;
-        z-index: 6;
-        background-size: cover;
+        display: flex;
+        justify-content: center; /* Center horizontally */
+        /* align-items: center; Center vertically */
+    
+        align-items: center;
+        width: 15vw;
+        height: 5vh;
+        background-image: url('./images/SmallTape.png');
+        background-size: contain; /* Scale the image to fit the clock div */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-position: center; /* Center the background image */
+    
+    }
+    
+    .fastForward img {
+        height: 35%; /* Adjust image size */
+        transform: translateY(-30%); /* Adjust vertical position */
+    }
+
+    .clock {
+        width: 100%;
+        height: 70vmin; /* Set a responsive height for the clock */
+        }
+
+    .timeTape {
+        width: 65vw;
+        height: 7vh;
+        background-image: url('./images/TimeTape/10am.png');
+        background-size: contain; /* Scale the image to fit the clock div */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-position: center; /* Center the background image */
+    }
+    
+    .song {
+        position: relative; /* Allows positioning of child elements */
+        background-image: url("./polaroid.png");
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
         background-position: center;
-        position: relative;
-        width: 15%;
-        height: 15%;
+        background-size: contain; /* Keep the original size of the polaroid */
+        background-repeat: no-repeat;
+        width: 27vw; /* Set width for songs to fit in a row */
+        height: 33vw; /* Let height adjust based on content */
+    }
+
+    .song img {
+        position: absolute; /* Position the image inside the container */
+        width: 80%; /* Image fills 80% of the .song container */
+        height: auto; /* Maintain aspect ratio */
+        top: 5%;
+        left: 10%;
+        height: auto; /* Maintain aspect ratio */
+    
+    }
+    
+    .songText {
+        position: absolute;
+        top: 74%; /* Position text relative to the .song container */
+        left: 50%;
+        width: 80%; /* Text width relative to the song container */
+        transform: translateX(-50%); /* Center text */
+        font-family: "Mynerve";
+        font-size: 2vw; /* Adjust font size for mobile */
+        text-align: center; /* Center text alignment */
     }
 }
-

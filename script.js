@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             }
         },
-        pm : {
+        'pm' : {
             '1' : {
                 '1' : {
                     'name' : 'Snowshoes - Caamp',
@@ -630,14 +630,16 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
+
     // Select the elements for the clock hands
     const hourHand = document.querySelector('.hour');
     const minuteHand = document.querySelector('.minute');
     const secondHand = document.querySelector('.second');
-    const now = new Date();
+
+    const tape = document.getElementsByClassName('timeTape')[0];
+    let now = new Date();
     let addedTime = 0;
     let timeOfDay = now.getHours() > 11 ? "pm" : "am";
-    setBackground(timeOfDay);
     let fastForwarding = false;
     let interval = 1000;
     let seconds = now.getSeconds();
@@ -646,21 +648,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Get all song elements
     const songs = document.querySelectorAll('.song');
+
     //Initial set of songs
     setSongs(now.getHours() % 12, true);
-    let prevHour = -1;
-
-    setTime(now.getHours() % 12, timeOfDay);
+    let prevHour = now.getHours();
 
     const videoContainer = document.createElement('div');
     videoContainer.classList.add('video-container');
     document.body.appendChild(videoContainer);
 
-    setSongs(hours % 12, true);
-
     // Function to set the clock based on the current time
     function setClock() {
-        const now = new Date();
+        now = new Date();
 
         if (fastForwarding) {
             addedTime += 7;
@@ -682,44 +681,46 @@ document.addEventListener('DOMContentLoaded', function () {
         hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 
         // Top of the hour
-        if (prevHour != hours && prevHour != -1) {
+        if (prevHour != hours) {
             timeOfDay = (hours % 24) > 11 ? "pm" : "am";
             setSongs(hours % 12, false);
-            setBackground(timeOfDay);    
-            setTime(hours % 12, timeOfDay);
-            setFastForwardImage(timeOfDay);
         }
+
         prevHour = hours;
     }
 
     setInterval(setClock, 1);
     setClock();
-
-    function setTime(hour, amOrPm) {
-        hour = hour === 0 ? 12 : hour;
-        let text = document.getElementsByClassName('miriam-libre-regular')[0];
-        text.innerText = "now playing music that feels like " + hour + " " + amOrPm;
-    }
-
+    
     async function setSongs(hour, firstSongs) {
         if (!firstSongs) {
             await fade(-.01);
         }
-        removeVideos();
         let songNumber = 1;
+
+        setTimeTape(hour);
 
         songs.forEach(song => {
             image = song.getElementsByTagName('img')[0];
+            let text = song.getElementsByClassName('songText')[0];
+            text.textContent = songLinks[timeOfDay][hour === 0 ? 12 : hour][songNumber].name;
             image.src = "images/" + timeOfDay + "/" + (hour === 0 ? 12 : hour) + "/" + songNumber++ + ".png";
         });
 
         await fade(.01);
     }
 
+    function setTimeTape(hour) {
+        let displayHour = hour % 12 === 0 ? 12 : hour % 12; // Convert to 12-hour format
+        let imagePath = `./images/TimeTape/${displayHour}${timeOfDay}.png`; // Construct the image path
+    
+        tape.style.backgroundImage = `url('${imagePath}')`;
+    }
+
     async function fade(change) {
         let opacity = change > 0 ? 0 : 1;
         while (opacity > -.01 && opacity < 1.01) {
-            await new Promise(resolve => setTimeout(resolve, fastForwarding ? .5 : 5));  
+            await new Promise(resolve => setTimeout(resolve, fastForwarding ? 5 : 5));  
             opacity += change;
             songs.forEach(song => {
                 song.style.opacity = opacity;
@@ -727,108 +728,77 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }
 
-    function setBackground(amOrPm) {
-        let text = document.getElementsByClassName('text-section')[0];
-        text.style.color = amOrPm === "am" ? '#222222' : '#F9F6EE';
-
-        let blur = document.getElementsByClassName('background-blur')[0];
-        blur.style.background = amOrPm === "am" ? '#F9F6EE' : '#222222';
-
-        amOrPm === "am" ? document.body.style.backgroundColor = '#F9F6EE' : document.body.style.backgroundColor = '#222222';
-    }
 
     const fastForward = document.querySelectorAll('.fastForward')[0];
 
-    fastForward.addEventListener('mouseover', () => {
-        fastForward.src = timeOfDay==="am" ? 'images/skip/blackFill.png' : 'images/skip/whiteFill.png';
+    fastForward.addEventListener('click', () => {
+        let image = fastForward.getElementsByTagName('img')[0];
+
+        if (image.src.split('/')[6] === 'Black.gif') {
+            image.src = './images/SkipTime/Images/black1.png';
+        } else {
+            image.src = './images/SkipTime/Gifs/Black.gif';
+        }
+
+        fastForwarding = !fastForwarding;
     });
 
-    fastForward.addEventListener('mouseout', () => {
-        fastForward.src = timeOfDay==="am" ? 'images/skip/blackEmpty.png' : 'images/skip/whiteEmpty.png';
-    });
-
-    fastForward.addEventListener('mousedown', () => {
-        fastForwarding = true;
-
-        document.getElementsByClassName('second')[0].style.opacity = '0';
-    });
-
-    fastForward.addEventListener('mouseup', () => {
-        fastForwarding = false;
-
-        document.getElementsByClassName('second')[0].style.opacity = '1';
-    });
-
-    function setFastForwardImage(timeOfDay) {
-        let icon = timeOfDay === "am" ? "black" : "white";
-        icon += fastForwarding ? "Fill" : "Empty";
-        fastForward.src = "images/skip/" + icon + ".png";
-    }
-    setFastForwardImage(timeOfDay);
-
-
-    // Loop over each song element
-    songs.forEach(song => {
-        song.addEventListener('click', () => {
-            const iframe = videoContainer.querySelector('iframe'); // Check if there's any video in the background
-            const img = song.querySelector('img'); // Select the image inside the song container
-            
-            // If the video from the same song is playing, toggle it off
-            if (iframe && iframe.src === getSrc(song.id)) {
-                removeVideos(); // Remove the iframe and halo effect
-                return; // Exit early, as we toggled the video off
-            }
-
-            // Otherwise, toggle off other videos and toggle on this one
-            removeVideos(); // Remove videos from other songs
-
-            // Create a new iframe and add it to the background
-            const newIframe = document.createElement('iframe');
-            newIframe.src = getSrc(song.id); // Get the correct video link
-            newIframe.classList.add('video-background');
-            newIframe.allow = "autoplay; encrypted-media"; // Allow autoplay
-
-            videoContainer.innerHTML = ''; // Clear any previous video
-            videoContainer.appendChild(newIframe); // Add new video iframe to the background
-
-            
-
-            // Ensure the image is visible
-            img.style.opacity = "1"; // Make sure the image is visible
-            img.style.display = "block"; // Ensure the image is displayed if it's hidden
-
-            // Add halo class to the clicked song's image
-            img.classList.add('halo');
-        });
-    });
-
-    
-    function getSrc(songId) {
-        let songNo = songId.split('-')[1];
-        return songLinks[timeOfDay][hours % 12 === 0 ? '12' : hours % 12][songNo].link + "?autoplay=1&controls=0&rel=0";
-    }
-    
-    // Function to remove any playing video and clear effects
-    function removeVideos() {
-        // Iterate over all song elements and remove iframe and halo effects
+        // Loop over each song element
         songs.forEach(song => {
-            const img = song.querySelector('img');
-            if (img) {
-                img.classList.remove('halo'); // Remove halo for all songs
-            }
+            song.addEventListener('click', () => {
+                const iframe = videoContainer.querySelector('iframe'); // Check if there's any video in the background
+                const img = song.querySelector('img'); // Select the image inside the song container
+                
+                // If the video from the same song is playing, toggle it off
+                if (iframe && iframe.src === getSrc(song.id)) {
+                    removeVideos(); // Remove the iframe and halo effect
+                    return; // Exit early, as we toggled the video off
+                }
+    
+                // Otherwise, toggle off other videos and toggle on this one
+                removeVideos(); // Remove videos from other songs
+    
+                // Create a new iframe and add it to the background
+                const newIframe = document.createElement('iframe');
+                newIframe.src = getSrc(song.id); // Get the correct video link
+                newIframe.classList.add('video-background');
+                newIframe.allow = "autoplay; encrypted-media"; // Allow autoplay
+    
+                videoContainer.innerHTML = ''; // Clear any previous video
+                videoContainer.appendChild(newIframe); // Add new video iframe to the background
+    
+                
+    
+                // Ensure the image is visible
+                img.style.opacity = "1"; // Make sure the image is visible
+                img.style.display = "block"; // Ensure the image is displayed if it's hidden
+    
+                // Add halo class to the clicked song's image
+                img.classList.add('halo');
+            });
         });
     
-        // Clear the video background container
-        videoContainer.innerHTML = ''; 
-    }
+
+        function getSrc(songId) {
+            let songNo = songId.split('-')[1];
+            return songLinks[timeOfDay][hours % 12 === 0 ? '12' : hours % 12][songNo].link + "?autoplay=1&controls=0&rel=0";
+        }
+
+        // Function to remove any playing video and clear effects
+        function removeVideos() {
+            // Iterate over all song elements and remove iframe and halo effects
+            songs.forEach(song => {
+                const img = song.querySelector('img');
+                if (img) {
+                    img.classList.remove('halo'); // Remove halo for all songs
+                }
+            });
+        
+            // Clear the video background container
+            videoContainer.innerHTML = ''; 
+        }
+
+    
+
+
 });
-
-
-
-
-
-
-
-
-
-
