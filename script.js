@@ -697,13 +697,13 @@ document.addEventListener('DOMContentLoaded', function () {
     function setBackground() {
         let background = document.body.style;
 
-        background.backgroundColor = timeOfDay === "am" ? "#4A4A4A" : "#F0F8FF";
+        background.backgroundColor = timeOfDay === "pm" ? "#4A4A4A" : "#F0F8FF";
     }
 
     setBackground();
     
     async function setSongs(hour, firstSongs) {
-        setTimeTape(hour);
+        // setTimeTape(hour);
 
         if (!firstSongs) {
             await fade(-.01);
