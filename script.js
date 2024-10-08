@@ -820,8 +820,12 @@ document.addEventListener('DOMContentLoaded', function () {
             newIframe.classList.add('video-background');
             newIframe.allow = "autoplay; encrypted-media"; // Allow autoplay
 
+            newIframe.style.pointerEvents = "auto";
+
             videoContainer.innerHTML = ''; // Clear any previous video
             videoContainer.appendChild(newIframe); // Add new video iframe to the background    
+
+            playAnimation();
             
             backBlur.style.opacity = ".8";
 
@@ -830,10 +834,19 @@ document.addEventListener('DOMContentLoaded', function () {
             img.style.display = "block"; // Ensure the image is displayed if it's hidden
 
 
+
             // Add halo class to the clicked song's image
             img.classList.add('halo');
         });
     });
+
+    const play = document.getElementsByClassName("play")[0];
+    let playGif = play.getElementsByTagName("img")[0];
+    async function playAnimation() {
+        playGif.src = './playAnim.gif';
+        await new Promise(resolve => setTimeout(resolve, 3000));  
+        playGif.src = '';
+    }
 
 
     function getSrc(songId) {
@@ -852,6 +865,7 @@ document.addEventListener('DOMContentLoaded', function () {
         });
 
         backBlur.style.opacity = "0";
+        backBlur.style.pointerEvents = "none";
     
         // Clear the video background container
         videoContainer.innerHTML = ''; 

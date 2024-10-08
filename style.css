@@ -3,6 +3,9 @@ body {
     background-color: #F5F5F5;
 }
 
+
+/* Other CSS rules remain unchanged */
+
 .container {
     display: flex; /* Use flexbox to align children in a row */
     overflow: hidden;
@@ -160,6 +163,10 @@ body {
 
 }
 
+.play {
+    visibility: hidden;
+}
+
 .fastForward img {
     height: 40%;
     transform: translateY(-42%); /* Move the image up by 10 pixels */
@@ -190,6 +197,7 @@ body {
     z-index: -2; /* Behind other elements */
     overflow: hidden;
     backdrop-filter: blur(1100px); /* Apply blur effect */
+    pointer-events: none;
 
 
 }
@@ -201,7 +209,7 @@ body {
     width: 100vw;
     height: 100vh;
     transform: translate(-50%, -50%);
-    pointer-events: none; /* Prevent interaction with the video */
+    pointer-events: auto; /* Prevent interaction with the video */
 }
 
 
@@ -264,12 +272,14 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    width: 110%;
-    height: 110%;
+    width: 100%;
+    height: 100%;
     z-index: -1; /* Ensure it's behind all other elements */
     background: rgb(36, 36, 36); /* A semi-transparent white background */
     opacity: 0;
     backdrop-filter: blur(1100px); /* Apply blur effect */
+    pointer-events: none ;
+    overflow: hidden;
 }
 
 .song img.halo {
@@ -291,12 +301,25 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 800px) {
+    body {
+        pointer-events: none;
+    }
+
+
+    
+    .video-container, .video-background {
+        pointer-events: auto; /* Enable pointer events for video container and background */
+    }
+    
+
+
     .container {    
         display: flex; /* Use flexbox to align children */
         flex-direction: column; /* Stack items vertically */
         justify-content: center; /* Center items vertically */
         align-items: center; /* Center items horizontally */
         height: 100vh; /* Set the height to fill the viewport */
+        pointer-events: none;
     }
     
     .songContainer {
@@ -337,6 +360,7 @@ body {
         display: flex;
         flex-direction: column; /* Stack items vertically */
         align-items: center; /* Center items horizontally */
+        pointer-events: none;
     }
     .cd {
         box-shadow: none;
@@ -355,6 +379,7 @@ body {
         background-size: contain; /* Scale the image to fit the clock div */
         background-repeat: no-repeat; /* Prevent the image from repeating */
         background-position: center; /* Center the background image */
+        pointer-events: auto;
     
     }
     
@@ -364,10 +389,22 @@ body {
     }
 
     .clock {
+        display: flex;
         width: 80vmin;
         height: 71vmin; /* Set a responsive height for the clock */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
         margin-right: 5vw;
+        pointer-events: none;
+    }
+    .background-blur {
+        pointer-events: none;
+    }
+
+    .video-container {
+        pointer-events: none;
+    }
+    .video-background {
+        pointer-events: auto;
     }
 
     .timeTape {
@@ -388,6 +425,7 @@ body {
         background-repeat: no-repeat;
         width: 22vw; /* Set width for songs to fit in a row */
         height: 26.5vw; /* Let height adjust based on content */
+        pointer-events: auto;
     }
 
     .song img {
@@ -431,4 +469,23 @@ body {
         border-radius: 50%;
         z-index: 100;
     }        
+    .play {
+        position: absolute;
+        visibility: visible;
+        background-size: contain; /* Scale the image to fit the clock div */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-position: center; /* Center the background image */
+    
+        
+
+        z-index: 1000;
+    }
+
+    .play img {
+        width: 30%; /* Adjust image size */
+        left: 50%;
+        top: 50%;
+        transform: translate(130%, 95%);
+    }
+
 }
