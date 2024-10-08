@@ -63,6 +63,8 @@ body {
 }
 
 .cd {
+    box-shadow: 0 4px 40px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    z-index: 5;
     width: 100%;
 }
 
@@ -271,8 +273,9 @@ body {
 }
 
 .song img.halo {
-    box-shadow: 0px 0px 100px white;
-    box-sizing: border-box; /* Ensures border is part of the element's width */
+    box-shadow: 0px 0px 500px rgba(255, 255, 255, 0.9), /* Offset for more depth */
+                -10px -10px 150px rgba(0, 204, 255, 0.5);
+    box-sizing: border-box;
 }
 
 
