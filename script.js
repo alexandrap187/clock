@@ -835,7 +835,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             videoContainer.innerHTML = ''; // Clear any previous video
             videoContainer.appendChild(newIframe); // Add new video iframe to the background    
-
+//change
 
             if (firstClick) {
                 playAnimation();
