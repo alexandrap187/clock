@@ -673,8 +673,12 @@ document.addEventListener('DOMContentLoaded', function () {
         const curTime = now.getSeconds() + (now.getMinutes() * 60) + (now.getHours() * 60 * 60) + addedTime;
 
         seconds = curTime % 60;
-        const secondsDegrees = ((seconds / 60) * 360) ; // 90 degrees offset
-        secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+
+        const degSecs = (curTime - addedTime) % 60;
+
+        const secondsDegrees = ((degSecs / 60) * 360) ; // 90 degrees offset
+        secondHand.style.transform = `rotate(${secondsDegrees}deg)`;    
+
 
         minutes = Math.floor(curTime/60) % 60;
         const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) ;
@@ -721,7 +725,7 @@ document.addEventListener('DOMContentLoaded', function () {
             image.src = "images/" + timeOfDay + "/" + (hour === 0 ? 12 : hour) + "/" + songNumber++ + ".png";
         });
 
-        await new Promise(resolve => setTimeout(resolve, 10));  
+        await new Promise(resolve => setTimeout(resolve, 300));  
 
         await fade(.01);
     }
@@ -759,10 +763,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let secHand = document.getElementsByClassName('temmp')[0];
 
+    async function fadeSec(change) {
+        let opacity = change > 0 ? 0 : 1;
+        while (opacity > -.01 && opacity < 1.01) {
+            await new Promise(resolve => setTimeout(resolve, 5));  
+            opacity += change;
+            secHand.style.opacity = opacity;
+        }
 
+    }
 
     const backBlur = document.getElementsByClassName('background-blur')[0];
-
 
     const fastForward = document.querySelectorAll('.fastForward')[0];
 
@@ -772,14 +783,21 @@ document.addEventListener('DOMContentLoaded', function () {
         const imageList = image.src.split('/');
 
         if (imageList[imageList.length - 1] === 'Black.gif') {
+            fastForwarding = !fastForwarding;
+
+            fadeSec(.01);
+
             secHand.style.opacity = "1";
             image.src = './images/SkipTime/Images/black1.png';
         } else {
+            fadeSec(-.01);
+
+            fastForwarding = !fastForwarding;
+
             secHand.style.opacity = "0";
             image.src = './images/SkipTime/Gifs/Black.gif';
         }
 
-        fastForwarding = !fastForwarding;
     });
 
     // Loop over each song element
