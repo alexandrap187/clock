@@ -296,9 +296,10 @@ body {
     }
 
     .clock {
-        width: 100%;
-        height: 70vmin; /* Set a responsive height for the clock */
-        }
+        width: 80vmin;
+        height: 70.5vmin; /* Set a responsive height for the clock */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    }
 
     .timeTape {
         width: 65vw;
