@@ -734,7 +734,9 @@ document.addEventListener('DOMContentLoaded', function () {
     fastForward.addEventListener('click', () => {
         let image = fastForward.getElementsByTagName('img')[0];
 
-        if (image.src.split('/')[6] === 'Black.gif') {
+        const imageList = image.src.split('/');
+
+        if (imageList[imageList.length - 1] === 'Black.gif') {
             image.src = './images/SkipTime/Images/black1.png';
         } else {
             image.src = './images/SkipTime/Gifs/Black.gif';

@@ -61,6 +61,8 @@ body {
     background-size: contain; /* Scale the image to fit the clock div */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the background image */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+
     
 }
 
