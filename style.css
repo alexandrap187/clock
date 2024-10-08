@@ -80,7 +80,7 @@ body {
 }
 
 .hour {
-    width: 10px; /* Width of hour hand */
+    width: 5px; /* Width of hour hand */
     height: 30%; /* Height as a percentage of the clock size */
     bottom: 50%; /* Position at the center bottom */
     left: 53%; /* Center it horizontally */
@@ -88,7 +88,7 @@ body {
 }
 
 .minute {
-    width: 7px; /* Width of minute hand */
+    width: 5px; /* Width of minute hand */
     height: 40%; /* Height as a percentage of the clock size */
     bottom: 50%; /* Position at the center bottom */
     left: 53%; /* Center it horizontally */
@@ -452,7 +452,7 @@ body {
     }
 
     .hour {
-        width: 5px;
+        width: 3px;
     }
     .minute {
         width: 3px;
