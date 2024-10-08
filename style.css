@@ -61,8 +61,7 @@ body {
     background-size: contain; /* Scale the image to fit the clock div */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the background image */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-
+    z-index: 10;
     
 }
 
@@ -229,23 +228,23 @@ body {
 
 /* Responsive Styles */
 @media (max-width: 768px) {
-    .container {
+    .container {    
         display: flex; /* Use flexbox to align children */
         flex-direction: column; /* Stack items vertically */
-        justify-content: space-evenly; /* Center items vertically */
+        justify-content: center; /* Center items vertically */
         align-items: center; /* Center items horizontally */
-        height: 100%; /* Set the height to fill the viewport */
+        height: 100vh; /* Set the height to fill the viewport */
     }
     
     .songContainer {
         display: flex;
         flex-direction: row; /* Show songs in a row */
-        padding-top: 0vh;
+        padding-top: 28vh;
         align-items: flex-end; /* Center items vertically */
         padding-bottom: 0vh;
         justify-content: space-evenly; /* Space items evenly */
         box-sizing: border-box;
-        height: 22vh; /* Allow height to adjust based on content */
+        height: 25vh; /* Allow height to adjust based on content */
         width: 100%; /* Full width */
         overflow-y: hidden; /* Prevent vertical overflow */
         margin-left: 0vw;
@@ -256,6 +255,7 @@ body {
         display: flex;
         flex-direction: row; /* Show songs in a row */
         padding-top: 0vh;
+        padding-bottom: 30vh;
         align-items: flex-start; /* Center items vertically */
         justify-content: space-evenly; /* Space items evenly */
         box-sizing: border-box;
@@ -299,7 +299,7 @@ body {
 
     .clock {
         width: 80vmin;
-        height: 70.5vmin; /* Set a responsive height for the clock */
+        height: 71vmin; /* Set a responsive height for the clock */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
     }
 
