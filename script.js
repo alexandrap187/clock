@@ -652,6 +652,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Get all song elements
     const songs = document.querySelectorAll('.song');
 
+    let firstClick = true;
+
     //Initial set of songs
     setSongs(now.getHours() % 12, true);
     let prevHour = now.getHours();
@@ -799,8 +801,8 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     async function frameAnimation(change) {
-        let opacity = change > 0 ? 0 : 1;
-        while (opacity > -.01 && opacity < 1.01) {
+        let opacity = change > 0 ? 0.01 : .999;
+        while (opacity > 0 && opacity < 1) {
             await new Promise(resolve => setTimeout(resolve, 5));  
             opacity += change;
             videoContainer.style.opacity = opacity;
@@ -810,7 +812,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Loop over each song element
     songs.forEach(song => {
-        song.addEventListener('click', () => {
+        song.addEventListener('click', async () => {
             const iframe = videoContainer.querySelector('iframe'); // Check if there's any video in the background
             const img = song.querySelector('img'); // Select the image inside the song container
             
@@ -834,9 +836,12 @@ document.addEventListener('DOMContentLoaded', function () {
             videoContainer.innerHTML = ''; // Clear any previous video
             videoContainer.appendChild(newIframe); // Add new video iframe to the background    
 
-            frameAnimation(.0001);
 
-            playAnimation();
+            if (firstClick) {
+                playAnimation();
+                firstClick = false;
+            }
+            //frameAnimation(.01);
             
             backBlur.style.opacity = ".8";
 
@@ -882,7 +887,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Function to remove any playing video and clear effects
     function removeVideos() {
 
-        frameAnimation(-.01);
+        //frameAnimation(-.01);
         // Iterate over all song elements and remove iframe and halo effects
         songs.forEach(song => {
             const img = song.querySelector('img');
