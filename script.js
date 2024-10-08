@@ -684,6 +684,7 @@ document.addEventListener('DOMContentLoaded', function () {
         if (prevHour != hours) {
             timeOfDay = (hours % 24) > 11 ? "pm" : "am";
             setSongs(hours % 12, false);
+            setBackground();
         }
 
         prevHour = hours;
@@ -691,6 +692,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     setInterval(setClock, 1);
     setClock();
+
+    function setBackground() {
+        let background = document.body.style;
+
+        background.backgroundColor = timeOfDay === "pm" ? "#1E3E55" : "#F1FDFF";
+    }
+
+    setBackground();
     
     async function setSongs(hour, firstSongs) {
         if (!firstSongs) {
@@ -720,7 +729,7 @@ document.addEventListener('DOMContentLoaded', function () {
     async function fade(change) {
         let opacity = change > 0 ? 0 : 1;
         while (opacity > -.01 && opacity < 1.01) {
-            await new Promise(resolve => setTimeout(resolve, fastForwarding ? 5 : 5));  
+            await new Promise(resolve => setTimeout(resolve, fastForwarding ? .75 : 5));  
             opacity += change;
             songs.forEach(song => {
                 song.style.opacity = opacity;
@@ -774,6 +783,8 @@ document.addEventListener('DOMContentLoaded', function () {
                 // Ensure the image is visible
                 img.style.opacity = "1"; // Make sure the image is visible
                 img.style.display = "block"; // Ensure the image is displayed if it's hidden
+
+                const clock = document.getElementsByClassName('clock');
     
                 // Add halo class to the clicked song's image
                 img.classList.add('halo');

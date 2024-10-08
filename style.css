@@ -196,7 +196,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1; /* Ensure it's behind all other elements */
-    background: rgba(255, 255, 255); /* A semi-transparent white background */
+   /* background: rgb(241, 253, 255); /* A semi-transparent white background */
     opacity: .7;
     backdrop-filter: blur(1100px); /* Apply blur effect */
 }
@@ -301,6 +301,7 @@ body {
         width: 80vmin;
         height: 71vmin; /* Set a responsive height for the clock */
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        margin-right: 5vw;
     }
 
     .timeTape {
