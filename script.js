@@ -369,23 +369,23 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             '3' : {
                 '1' : {
-                    'name' : 'Feel Good Inc',
+                    'name' : 'Feel Good Inc. - Gorillaz',
                     'link' : 'https://www.youtube.com/embed/HyHNuVaZJ-k'    
                 },
                 '2' : {
-                    'name' : 'CAKE - Never There',
+                    'name' : 'Never There - CAKE',
                     'link' : 'https://www.youtube.com/embed/FRZzUh9hcTo'
                 },
                 '3' : {
-                    'name' : 'Modest Mouse - Float On',
+                    'name' : 'Float On - Modest Mouse',
                     'link' : 'https://www.youtube.com/embed/CTAud5O7Qqk'
                 },
                 '4' : {
-                    'name' : 'Loser',
+                    'name' : 'Loser - Beck',
                     'link' : 'https://www.youtube.com/embed/YgSPaXgAdzE'
                 },
                 '5' : {
-                    'name' : 'Drive',
+                    'name' : 'Drive - Incubus',
                     'link' : 'https://www.youtube.com/embed/fgT9zGkiLig'
                 },
                 '6' : {
@@ -395,111 +395,111 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             '4' : {
                 '1' : {
-                    'name' : 'Looking Glass - Brandy (Youre a Fine Girl)',
+                    'name' : 'Brandy (You’re A Fine Girl) - Looking Glass',
                     'link' : 'https://www.youtube.com/embed/DVx8L7a3MuE'    
                 },
                 '2' : {
-                    'name' : 'Brown Eyed Girl',
+                    'name' : 'Brown Eyed Girl - Van Morrison',
                     'link' : 'https://www.youtube.com/embed/UfmkgQRmmeE'
                 },
                 '3' : {
-                    'name' : 'Dancing in the Moonlight',
+                    'name' : 'Dancing in the Moonlight - King Harvest',
                     'link' : 'https://www.youtube.com/embed/g5JqPxmYhlo'
                 },
                 '4' : {
-                    'name' : 'Dirty Work',
+                    'name' : 'Dirty Work - Steely Dan',
                     'link' : 'https://www.youtube.com/embed/kR5Ki6jjPaY'
                 },
                 '5' : {
-                    'name' : 'Creedence Clearwater Revival - Have You Ever Seen The Rain',
+                    'name' : 'Have You Ever Seen The Rain - Creedence Clearwater Revival',
                     'link' : 'https://www.youtube.com/embed/u1V8YRJnr4Q'
                 },
                 '6' : {
-                    'name' : 'Otis Redding - (Sittin On) The Dock Of The Bay',
+                    'name' : '(Sittin’ On) the Dock of the Bay - Otis Redding',
                     'link' : 'https://www.youtube.com/embed/rTVjnBo96Ug'
                 }
             },
             '5' : {
                 '1' : {
-                    'name' : 'Guns N Roses - Sweet Child O Mine',
+                    'name' : 'Sweet Child O’ Mine - Guns N’ Roses',
                     'link' : 'https://www.youtube.com/embed/1w7OgIMMRc4'    
                 },
                 '2' : {
-                    'name' : 'Alive',
+                    'name' : 'Alive - Pearl Jam',
                     'link' : 'https://www.youtube.com/embed/qM0zINtulhM'
                 },
                 '3' : {
-                    'name' : 'AC/DC - You Shook Me All Night Long',
+                    'name' : 'You Shook Me All Night Long - AC/DC',
                     'link' : 'https://www.youtube.com/embed/Lo2qQmj0_h4'
                 },
                 '4' : {
-                    'name' : 'Black Dog',
+                    'name' : 'Black Dog - Led Zeppelin',
                     'link' : 'https://www.youtube.com/embed/yBuub4Xe1mw'
                 },
                 '5' : {
-                    'name' : 'Helter Skelter',
+                    'name' : 'Helter Skelter - The Beatles',
                     'link' : 'https://www.youtube.com/embed/vWW2SzoAXMo'
                 },
                 '6' : {
-                    'name' : 'Sweet Emotion',
+                    'name' : 'Sweet Emotion - Aerosmith',
                     'link' : 'https://www.youtube.com/embed/82cJgPXU-ik'
                 }
             },
             '6' : {
                 '1' : {
-                    'name' : 'Ramones - Sheena Is A Punk Rocker',
+                    'name' : 'Sheena Is a Punk Rocker - Ramones ',
                     'link' : 'https://www.youtube.com/embed/yCW7Aw8ugOI'    
                 },
                 '2' : {
-                    'name' : 'The Clash - Lost in the Supermarket',
+                    'name' : 'Lost in the Supermarket - The Clash',
                     'link' : 'https://www.youtube.com/embed/hZw23sWlyG0'
                 },
                 '3' : {
-                    'name' : 'The Smiths - This Charming Man',
+                    'name' : 'This Charming Man - The Smiths',
                     'link' : 'https://www.youtube.com/embed/cJRP3LRcUFg'
                 },
                 '4' : {
-                    'name' : 'Boys Dont Cry',
+                    'name' : 'Boys Don’t Cry - The Cure',
                     'link' : 'https://www.youtube.com/embed/YSAqXEcgoZ4'
                 },
                 '5' : {
-                    'name' : 'Zombie',
+                    'name' : 'Zombie - The Cranberries',
                     'link' : 'https://www.youtube.com/embed/BxrLVldZtmg'
                 },
                 '6' : {
-                    'name' : 'Hey',
+                    'name' : 'Hey - Pixies',
                     'link' : 'https://www.youtube.com/embed/tVCUAXOBF7w'
                 }
             },
             '7' : {
                 '1' : {
-                    'name' : 'dumpweed',
+                    'name' : 'Dumpweed - blink-182',
                     'link' : 'https://www.youtube.com/embed/PDwB1nHh9Ow'    
                 },
                 '2' : {
-                    'name' : 'Sophomore Slump Or Comeback Of The Year',
+                    'name' : 'Sophomore Slump Or Comeback Of The Year - Fall Out Boy',
                     'link' : 'https://www.youtube.com/embed/Vg_AMXtiuok'
                 },
                 '3' : {
-                    'name' : 'Famous Last Words',
+                    'name' : 'Famous Last Words - My Chemical Romance',
                     'link' : 'https://www.youtube.com/embed/8bbTtPL1jRs'
                 },
                 '4' : {
-                    'name' : 'Longview',
+                    'name' : 'Longview - Green Day',
                     'link' : 'https://www.youtube.com/embed/llvDJJeYde4'
                 },
                 '5' : {
-                    'name' : 'Fat Lip',
+                    'name' : 'Fat Lip - Sum 41',
                     'link' : 'https://www.youtube.com/embed/atjJVwok9ws'
                 },
                 '6' : {
-                    'name' : 'crushcrushcrush',
+                    'name' : 'crushcrushcrush - Paramore',
                     'link' : 'https://www.youtube.com/embed/ei8hPkyJ0bU'
                 }
             },
             '8' : {
                 '1' : {
-                    'name' : 'Modern Baseball - Fine, Great ',
+                    'name' : 'Fine, Great - Modern Baseball',
                     'link' : 'https://www.youtube.com/embed/ZbyEyaT06iw'    
                 },
                 '2' : {
@@ -507,33 +507,33 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/Z2eelBo0afQ'
                 },
                 '3' : {
-                    'name' : 'Its only sex',
+                    'name' : 'It’s Only Sex - Car Seat Headrest',
                     'link' : 'https://www.youtube.com/embed/Z4yINX2Yw0Y'
                 },
                 '4' : {
-                    'name' : 'Lipstick Covered Magnet',
+                    'name' : 'Lipstick Covered Magnet - The Front Bottoms',
                     'link' : 'https://www.youtube.com/embed/fPRmnIzMr94'
                 },
                 '5' : {
-                    'name' : 'Constant Headache',
+                    'name' : 'Constant Headache - Joyce Manor',
                     'link' : 'https://www.youtube.com/embed/FmM4B5VSkMo'
                 },
                 '6' : {
-                    'name' : 'In the Aeroplane Over the Sea',
+                    'name' : 'In the Aeroplane Over the Sea - Neutral Milk Hotel',
                     'link' : 'https://www.youtube.com/embed/1FeD16vu_qQ'
                 }
             },
             '9' : {
                 '1' : {
-                    'name' : 'TWO DOOR CINEMA CLUB | WHAT YOU KNOW',
+                    'name' : 'What You Know - Two Door Cinema Club',
                     'link' : 'https://www.youtube.com/embed/YXwYJyrKK5A'    
                 },
                 '2' : {
-                    'name' : 'MGMT - Time to Pretend',
+                    'name' : 'Time to Pretend - MGMT',
                     'link' : 'https://www.youtube.com/embed/cKSvU4aGiSo'
                 },
                 '3' : {
-                    'name' : 'Way To Go',
+                    'name' : 'Way To Go - Empire Of The Sun',
                     'link' : 'https://www.youtube.com/embed/xg9ebVTL9yE'
                 },
                 '4' : {
@@ -541,89 +541,89 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/dR_9YC7HBDE'
                 },
                 '5' : {
-                    'name' : 'Shatter in the Night',
+                    'name' : 'Shatter in the Night - Vesperteen',
                     'link' : 'https://www.youtube.com/embed/zFY5gA2LRbU'
                 },
                 '6' : {
-                    'name' : 'Kids',
+                    'name' : 'Kids - MGMT',
                     'link' : 'https://www.youtube.com/embed/rdKfuwy6LUM'
                 }
             },
             '10' : {
                 '1' : {
-                    'name' : 'Magic',
+                    'name' : 'Magic - B.o.B, Rivers Cuomo',
                     'link' : 'https://www.youtube.com/embed/Cq-NShfefks'    
                 },
                 '2' : {
-                    'name' : 'We R Who We R',
+                    'name' : 'We R Who We R - Kesha',
                     'link' : 'https://www.youtube.com/embed/tCkGsyOYDMI'
                 },
                 '3' : {
-                    'name' : 'Tonight Tonight',
+                    'name' : 'Tonight Tonight - Hot Chelle Rae',
                     'link' : 'https://www.youtube.com/embed/F-qpEVE8wDg'
                 },
                 '4' : {
-                    'name' : 'Wake Me Up',
+                    'name' : 'Wake Me Up - Avicii',
                     'link' : 'https://www.youtube.com/embed/5y_KJAg8bHI'
                 },
                 '5' : {
-                    'name' : 'DJ Got Us Fallin In Love',
+                    'name' : 'DJ Got Us Fallin’ In Love - USHER, Pitbull',
                     'link' : 'https://www.youtube.com/embed/C-dvTjK_07c'
                 },
                 '6' : {
-                    'name' : 'Club Cant Handle Me',
+                    'name' : 'Club Can’t Handle Me - Flo Rida, David Guetta',
                     'link' : 'https://www.youtube.com/embed/SgM3r8xKfGE'
                 }
             },
             '11' : {
                 '1' : {
-                    'name' : 'Sleepless',
+                    'name' : 'Sleepless - D.O.D',
                     'link' : 'https://www.youtube.com/embed/b4jdyxTAiL8'    
                 },
                 '2' : {
-                    'name' : 'Club Classics',
+                    'name' : 'Club classics - Charli xcx',
                     'link' : 'https://www.youtube.com/embed/ZqUfXljALQE'
                 },
                 '3' : {
-                    'name' : 'Headnoise',
+                    'name' : 'Headnoise (Get Hype) - Martin Ikin',
                     'link' : 'https://www.youtube.com/embed/hVgNH8A9kso'
                 },
                 '4' : {
-                    'name' : 'Afraid to Feel',
+                    'name' : 'Afraid To Feel - LF SYSTEM',
                     'link' : 'https://www.youtube.com/embed/VHSmO_72Uro'
                 },
                 '5' : {
-                    'name' : 'Summer 91',
+                    'name' : 'Summer 91 - Noizu',
                     'link' : 'https://www.youtube.com/embed/jCwo7LQ2vMg'
                 },
                 '6' : {
-                    'name' : 'Just Feels Tight',
+                    'name' : 'Just Feels Tight - FISHER',
                     'link' : 'https://www.youtube.com/embed/BcI2Xj5HTWM'
                 }
             }, 
             '12' : {
                 '1' : {
-                    'name' : 'Charleston Girl',
+                    'name' : 'Charleston Girl (Live) - Tyler Childers',
                     'link' : 'https://www.youtube.com/embed/qJcn8tCYZqs'    
                 },
                 '2' : {
-                    'name' : 'Zach Bryan - 28',
+                    'name' : '28 - Zach Bryan',
                     'link' : 'https://www.youtube.com/embed/wJO0IoWY4t4'
                 },
                 '3' : {
-                    'name' : 'Tyler Childers - Lady May',
+                    'name' : 'Lady May - Tyler Childers',
                     'link' : 'https://www.youtube.com/embed/yxfo4Jfpc-c'
                 },
                 '4' : {
-                    'name' : 'Daylight',
+                    'name' : 'Daylight - Watchhouse',
                     'link' : 'https://www.youtube.com/embed/MoN9ql6Yymw'
                 },
                 '5' : {
-                    'name' : 'Pink Skies',
+                    'name' : 'Pink Skies - Zach Bryan',
                     'link' : 'https://www.youtube.com/embed/fs49xFmmHCo'
                 },
                 '6' : {
-                    'name' : 'Ragged Wood',
+                    'name' : 'Ragged Wood - Fleet Foxes',
                     'link' : 'https://www.youtube.com/embed/a2KOI8Lt2Lc'
                 }
             }
