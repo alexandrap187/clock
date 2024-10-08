@@ -634,7 +634,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Select the elements for the clock hands
     const hourHand = document.querySelector('.hour');
     const minuteHand = document.querySelector('.minute');
-    const secondHand = document.querySelector('.second');
+    const secondHand = document.querySelector('.temmp');
 
     const tape = document.getElementsByClassName('timeTape')[0];
     let now = new Date();
@@ -665,6 +665,7 @@ document.addEventListener('DOMContentLoaded', function () {
             addedTime += 7;
             interval = 1;
         }
+
 
         const curTime = now.getSeconds() + (now.getMinutes() * 60) + (now.getHours() * 60 * 60) + addedTime;
 
@@ -702,12 +703,13 @@ document.addEventListener('DOMContentLoaded', function () {
     setBackground();
     
     async function setSongs(hour, firstSongs) {
+        setTimeTape(hour);
+
         if (!firstSongs) {
             await fade(-.01);
         }
         let songNumber = 1;
 
-        setTimeTape(hour);
 
         songs.forEach(song => {
             image = song.getElementsByTagName('img')[0];

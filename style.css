@@ -55,15 +55,62 @@ body {
 }
 
 .clock {
+    position: relative;
     width: 100%;
-    height: 50vmin; /* Set a responsive height for the clock */
-    background-image: url('./cd.png');
     background-size: contain; /* Scale the image to fit the clock div */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the background image */
     z-index: 10;
-    
 }
+
+.cd {
+    width: 100%;
+}
+
+.hand {
+    position: absolute; /* Position hands absolutely */
+    background-color: #222222; /* Color of the hands */
+    border-radius: 5px; /* Rounded edges */
+    transform-origin: bottom; /* Rotate from the bottom */
+    z-index: 11; /* Ensure they are above other elements */
+}
+
+.hour {
+    width: 5px; /* Width of hour hand */
+    height: 30%; /* Height as a percentage of the clock size */
+    bottom: 50%; /* Position at the center bottom */
+    left: 53%; /* Center it horizontally */
+    transform: translateX(-50%) rotate(90deg); /* Adjust rotation as needed */
+}
+
+.minute {
+    width: 3.5px; /* Width of minute hand */
+    height: 40%; /* Height as a percentage of the clock size */
+    bottom: 50%; /* Position at the center bottom */
+    left: 53%; /* Center it horizontally */
+    transform: translateX(-50%) rotate(180deg); /* Adjust rotation as needed */
+}
+
+.temmp {
+    width: 2px; /* Width of minute hand */
+    height: 45%; /* Height as a percentage of the clock size */
+    bottom: 50%; /* Position at the center bottom */
+    left: 53%; /* Center it horizontally */
+    transform: translateX(-50%) rotate(180deg); /* Adjust rotation as needed */
+}
+
+.dot {
+    position: absolute; /* Position hands absolutely */
+    height: 2vh;
+    width: 2vh;
+    bottom: 47.5%; /* Position at the center bottom */
+    left: 51.1%; /* Center it horizontally */
+    background-color: #222222; /* Color of the hands */
+    border-radius: 50%;
+    z-index: 100;
+}
+
+
 
 .timeTape {
     width: 38vw;
@@ -211,44 +258,11 @@ body {
 
 
 
-.hand {
-    position: absolute; /* Allow precise positioning */
-    left: 51%; /* Center horizontally */
-    transform-origin: bottom center; /* Rotate around the bottom */
-    width: 2%; /* Set the width of the hand */
-    bottom: 49%; /* All hands start from the same position */
-    border-radius: 5px;
-    background-color: #222222; /* Example color for visibility */
-
-}
-
 .second {
-    width: 2px;
-    height: 22%; /* Length of the second hand */
+    top: 50%;
+    left: 50%;
+    transform: translate(50%, 50%);
 }
-
-.minute {
-    width: 3.5px;
-    height: 19%; /* Length of the minute hand */
-}
-
-.hour {
-    width: 5px;
-    height: 15%; /* Length of the hour hand */
-}
-
-.center-dot {
-    width: 1.2vw;
-    height: 1.2vw;
-    background-color: #222222;
-    position: absolute;
-    top: 50.9%;
-    left: 51.08%;
-    transform: translate(-50%, -50%);
-    border-radius: 50%;
-    z-index: 4; /* Ensure the center dot is on top */
-}
-
 
 
 
@@ -371,43 +385,15 @@ body {
         font-size: 1.8vw; /* Adjust font size for mobile */
         text-align: center; /* Center text alignment */
     }
-
-    .hand {
-        position: absolute; /* Allow precise positioning */
-        left: 50.255%; /* Center horizontally */
-        transform-origin: bottom center; /* Rotate around the bottom */
-        width: 2%; /* Set the width of the hand */
-        bottom: 52.6%; /* All hands start from the same position */
-        border-radius: 5px;
-        background-color: #222222; /* Example color for visibility */
-    
-    }
-    
-    .second {
-        width: 2px;
-        height: 15%; /* Length of the second hand */
-    }
-    
-    .minute {
-        width: 3.5px;
-        height: 14%; /* Length of the minute hand */
-    }
-    
-    .hour {
-        width: 5px;
-        height: 9%; /* Length of the hour hand */
-    }
-    
-    .center-dot {
-        width: 4vw;
-        height: 4vw;
-        background-color: #222222;
-        position: absolute;
-        top: 47.2%;
-        left: 50.28%;
-        transform: translate(-50%, -50%);
+        
+    .dot {
+        position: absolute; /* Position hands absolutely */
+        height: 1.75vh;
+        width: 1.75vh;
+        bottom: 47.5%; /* Position at the center bottom */
+        left: 51.25%; /* Center it horizontally */
+        background-color: #222222; /* Color of the hands */
         border-radius: 50%;
-        z-index: 4; /* Ensure the center dot is on top */
-    }
-    
+        z-index: 100;
+    }        
 }
