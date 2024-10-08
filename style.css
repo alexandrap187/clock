@@ -239,7 +239,7 @@ body {
     .songContainer {
         display: flex;
         flex-direction: row; /* Show songs in a row */
-        padding-top: 28vh;
+        padding-top: 26vh;
         align-items: flex-end; /* Center items vertically */
         padding-bottom: 0vh;
         justify-content: space-evenly; /* Space items evenly */
