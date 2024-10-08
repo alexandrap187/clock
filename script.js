@@ -669,15 +669,15 @@ document.addEventListener('DOMContentLoaded', function () {
         const curTime = now.getSeconds() + (now.getMinutes() * 60) + (now.getHours() * 60 * 60) + addedTime;
 
         seconds = curTime % 60;
-        const secondsDegrees = ((seconds / 60) * 360) + 270; // 90 degrees offset
+        const secondsDegrees = ((seconds / 60) * 360) ; // 90 degrees offset
         secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
 
         minutes = Math.floor(curTime/60) % 60;
-        const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) + 270;
+        const minutesDegrees = ((minutes / 60) * 360) + ((seconds / 60) * 6) ;
         minuteHand.style.transform = `rotate(${minutesDegrees}deg)`;
 
         hours = Math.floor(curTime/60/60) % 60;
-        const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) + 270;
+        const hoursDegrees = ((hours / 12) * 360) + ((minutes / 60) * 30) ;
         hourHand.style.transform = `rotate(${hoursDegrees}deg)`;
 
         // Top of the hour
@@ -696,7 +696,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function setBackground() {
         let background = document.body.style;
 
-        background.backgroundColor = timeOfDay === "pm" ? "#222222" : "#F1FDFF";
+        background.backgroundColor = timeOfDay === "am" ? "#4A4A4A" : "#F0F8FF";
     }
 
     setBackground();
@@ -736,6 +736,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
+    const backBlur = document.getElementsByClassName('background-blur')[0];
 
 
     const fastForward = document.querySelectorAll('.fastForward')[0];
@@ -776,17 +777,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 newIframe.allow = "autoplay; encrypted-media"; // Allow autoplay
     
                 videoContainer.innerHTML = ''; // Clear any previous video
-                videoContainer.appendChild(newIframe); // Add new video iframe to the background
-
-    
+                videoContainer.appendChild(newIframe); // Add new video iframe to the background    
                 
+                backBlur.style.opacity = .8;
     
                 // Ensure the image is visible
                 img.style.opacity = "1"; // Make sure the image is visible
                 img.style.display = "block"; // Ensure the image is displayed if it's hidden
 
-                const clock = document.getElementsByClassName('clock');
-    
+
                 // Add halo class to the clicked song's image
                 img.classList.add('halo');
             });
@@ -807,6 +806,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     img.classList.remove('halo'); // Remove halo for all songs
                 }
             });
+
+            backBlur.style.opacity = 0;
         
             // Clear the video background container
             videoContainer.innerHTML = ''; 

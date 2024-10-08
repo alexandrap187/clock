@@ -1,9 +1,11 @@
 body {
+    overflow: hidden;
     background-color: #F5F5F5;
 }
 
 .container {
     display: flex; /* Use flexbox to align children in a row */
+    overflow: hidden;
     justify-content: space-evenly; /* Space between columns */
     align-items: flex-start; /* Align items vertically in the center */
     height: 100vh; /* Set the height to fill the viewport */
@@ -195,8 +197,8 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1; /* Ensure it's behind all other elements */
-    background: rgb(0, 0, 0); /* A semi-transparent white background */
-    opacity: 1;
+    background: rgb(36, 36, 36); /* A semi-transparent white background */
+    opacity: 0;
     backdrop-filter: blur(1100px); /* Apply blur effect */
 }
 
@@ -208,20 +210,46 @@ body {
 }
 
 
+
 .hand {
-    position: absolute;
-    width: .15%; /* Adjust width for thin hands */
-    top: 36%; /* Position at the vertical center */
-    left: 51%; /* Position at the horizontal center */
+    position: absolute; /* Allow precise positioning */
+    left: 51%; /* Center horizontally */
     transform-origin: bottom center; /* Rotate around the bottom */
-    z-index: 2; /* Ensure hands are above clock face */
+    width: 2%; /* Set the width of the hand */
+    bottom: 49%; /* All hands start from the same position */
+    border-radius: 5px;
+    background-color: #222222; /* Example color for visibility */
+
+}
+
+.second {
+    width: 2px;
+    height: 22%; /* Length of the second hand */
+}
+
+.minute {
+    width: 3.5px;
+    height: 19%; /* Length of the minute hand */
 }
 
 .hour {
-    height: 10%; /* Shorter hand */
-    background-color: #000000; /* Color of hour hand */
-    z-index: 3;
+    width: 5px;
+    height: 15%; /* Length of the hour hand */
 }
+
+.center-dot {
+    width: 1.2vw;
+    height: 1.2vw;
+    background-color: #222222;
+    position: absolute;
+    top: 50.9%;
+    left: 51.08%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 4; /* Ensure the center dot is on top */
+}
+
+
 
 
 
@@ -230,7 +258,7 @@ body {
     .container {    
         display: flex; /* Use flexbox to align children */
         flex-direction: column; /* Stack items vertically */
-        justify-content: center; /* Center items vertically */
+        justify-content: flex-start; /* Center items vertically */
         align-items: center; /* Center items horizontally */
         height: 100vh; /* Set the height to fill the viewport */
     }
@@ -238,7 +266,7 @@ body {
     .songContainer {
         display: flex;
         flex-direction: row; /* Show songs in a row */
-        padding-top: 24vh;
+        padding-top: 4vh;
         align-items: flex-end; /* Center items vertically */
         padding-bottom: 0vh;
         justify-content: space-evenly; /* Space items evenly */
@@ -343,4 +371,43 @@ body {
         font-size: 1.8vw; /* Adjust font size for mobile */
         text-align: center; /* Center text alignment */
     }
+
+    .hand {
+        position: absolute; /* Allow precise positioning */
+        left: 51%; /* Center horizontally */
+        transform-origin: bottom center; /* Rotate around the bottom */
+        width: 2%; /* Set the width of the hand */
+        bottom: 49%; /* All hands start from the same position */
+        border-radius: 5px;
+        background-color: #222222; /* Example color for visibility */
+    
+    }
+    
+    .second {
+        width: 2px;
+        height: 22%; /* Length of the second hand */
+    }
+    
+    .minute {
+        width: 3.5px;
+        height: 19%; /* Length of the minute hand */
+    }
+    
+    .hour {
+        width: 5px;
+        height: 15%; /* Length of the hour hand */
+    }
+    
+    .center-dot {
+        width: 1.2vw;
+        height: 1.2vw;
+        background-color: #222222;
+        position: absolute;
+        top: 50.9%;
+        left: 51.08%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        z-index: 4; /* Ensure the center dot is on top */
+    }
+    
 }
