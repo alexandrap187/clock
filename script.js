@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/ixTkLjTBQyk'
                 },
                 '2' : {
-                    'name' : 'Japanese Denim',
+                    'name' : 'Japanese Denim - Daniel Caesar',
                     'link' : 'https://www.youtube.com/embed/6OkneaH-eTA'
                 },
                 '3' : {
@@ -19,11 +19,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/XTKn5fTBGeQ'
                 },
                 '5' : {
-                    'name' : 'Joji - YEAH RIGHT',
+                    'name' : 'YEAH RIGHT - Joji',
                     'link' : 'https://www.youtube.com/embed/tG7wLK4aAOE'
                 },
                 '6' : {
-                    'name' : 'SUPERPOSITION',
+                    'name' : 'SUPERPOSITION - Daniel Caesar, John Mayer',
                     'link' : 'https://www.youtube.com/embed/yyTugx3LnE8'
                 }
             },
@@ -41,21 +41,21 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/v77WFwYtUE0'
                 },
                 '4' : {
-                    'name' : 'I Don\'t Wanna Be Okay Without You',
+                    'name' : 'I Don\'t Wanna Be Okay Without You - Charlie Burg',
                     'link' : 'https://www.youtube.com/embed/ybQA720eyIE'
                 },
                 '5' : {
-                    'name' : 'Waiting Room',
+                    'name' : 'Waiting Room - Phoebe Bridgers',
                     'link' : 'https://www.youtube.com/embed/VUOwg6nhuzA'
                 },
                 '6' : {
-                    'name' : 'Finish Line',
+                    'name' : 'Finish Line - Delaney Bailey',
                     'link' : 'https://www.youtube.com/embed/DuFwjqnapcg'
                 }
             },
             '3' : {
                 '1' : {
-                    'name' : 'Hozier - Cherry Wine',
+                    'name' : 'Cherry Wine - Hozier',
                     'link' : 'https://www.youtube.com/embed/SdSCCwtNEjA'    
                 },
                 '2' : {
@@ -63,55 +63,55 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/zRexeIEFbRE'
                 },
                 '3' : {
-                    'name' : 'In Your Atmosphere',
+                    'name' : 'In Your Atmosphere - John Mayer',
                     'link' : 'https://www.youtube.com/embed/ZZ4defaop8k'
                 },
                 '4' : {
-                    'name' : 'Sparks',
+                    'name' : 'Sparks - Coldplay',
                     'link' : 'https://www.youtube.com/embed/Ar48yzjn1PE'
                 },
                 '5' : {
-                    'name' : 'Sufjan Stevens - "To Be Alone With You"',
+                    'name' : 'To Be Alone With You - Sufjan Stevens',
                     'link' : 'https://www.youtube.com/embed/N3zu9NucyBg'
                 },
                 '6' : {
-                    'name' : 'Place To Be',
+                    'name' : 'Place To Be - Nick Drake',
                     'link' : 'https://www.youtube.com/embed/jvLtyyBRITo'
                 }
             },
             '4' : {
                 '1' : {
-                    'name' : 'Words',
+                    'name' : 'Words - Gregory Alan Isakov',
                     'link' : 'https://www.youtube.com/embed/IXaMF4FqIkM'    
                 },
                 '2' : {
-                    'name' : 'searows- end of the world',
+                    'name' : 'Searows- End Of The World',
                     'link' : 'https://www.youtube.com/embed/e5eik2jffhk'
                 },
                 '3' : {
-                    'name' : 'Rosyln - Bon Iver & St. Vincent',
+                    'name' : 'Roslyn - Bon Iver, St. Vincent',
                     'link' : 'https://www.youtube.com/embed/-OCIiQNHEhw'
                 },
                 '4' : {
-                    'name' : 'Novo Amor - Anchor',
+                    'name' : 'Anchor - Novo Amor',
                     'link' : 'https://www.youtube.com/embed/OmKAn8rNbKg'
                 },
                 '5' : {
-                    'name' : 'Zach Webb - Found',
+                    'name' : 'Found - Zach Webb',
                     'link' : 'https://www.youtube.com/embed/iXzy2zY1HOM'
                 },
                 '6' : {
-                    'name' : 'Alps - Novo Amor',
+                    'name' : 'Alps - Novo Amor, Lowswimmer',
                     'link' : 'https://www.youtube.com/embed/w0VaGbkzQZ8'
                 }
             },
             '5' : {
                 '1' : {
-                    'name' : 'Erik Satie - Gymnopédie',
+                    'name' : 'Première Gymnopédie - Erik Satie, Alexandre Tharaud',
                     'link' : 'https://www.youtube.com/embed/S-Xm7s9eGxU'    
                 },
                 '2' : {
-                    'name' : 'Beethoven | Piano Sonata',
+                    'name' : 'Sonata No.14 "Moonlight" - Ludwig Van Beethoven, Paul Lewis',
                     'link' : 'https://www.youtube.com/embed/rlJHNufol8Q'
                 },
                 '3' : {
@@ -119,146 +119,146 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/MWERAZARYMw'
                 },
                 '4' : {
-                    'name' : 'Bleached',
+                    'name' : 'Bleached - Video Days',
                     'link' : 'https://www.youtube.com/embed/0pHR4_cyIuA'
                 },
                 '5' : {
-                    'name' : 'The Mercy of the Wind',
+                    'name' : 'The Mercy of the Wind - Million Eyes',
                     'link' : 'https://www.youtube.com/embed/DX6QHjx_RYw'
                 },
                 '6' : {
-                    'name' : 'Following the Clock to Sleep',
+                    'name' : 'Following the Clock to Sleep - Oberhofer',
                     'link' : 'https://www.youtube.com/embed/5ozyWTjva_k'
                 }
             },
             '6' : {
                 '1' : {
-                    'name' : 'peachy! • falling for you',
+                    'name' : 'Falling for U - Peachy!, mxmtoon',
                     'link' : 'https://www.youtube.com/embed/RSXiNSiiCsg'    
                 },
                 '2' : {
-                    'name' : 'Lost in You',
+                    'name' : 'Lost in You - khai dreams',
                     'link' : 'https://www.youtube.com/embed/I1UeM184MoU'
                 },
                 '3' : {
-                    'name' : 'Cut My Hair',
+                    'name' : 'Cut My Hair - Mounika., Cavetown',
                     'link' : 'https://www.youtube.com/embed/iuLPgRLR-w0'
                 },
                 '4' : {
-                    'name' : 'sagun - Ill Keep You Safe',
+                    'name' : 'I’ll Keep You Safe - sagun, Shiloh Dynasty',
                     'link' : 'https://www.youtube.com/embed/KCZqguEKdBc'
                 },
                 '5' : {
-                    'name' : 'Coffee Breath',
+                    'name' : 'Coffee Breath - Sofia Mills',
                     'link' : 'https://www.youtube.com/embed/EpcQwTkOonw'
                 },
                 '6' : {
-                    'name' : 'Monday Loop',
+                    'name' : 'Monday Loop - Tomppabeats',
                     'link' : 'https://www.youtube.com/embed/xlRRv9TpsoE'
                 }
             },
             '7' : {
                 '1' : {
-                    'name' : 'Norah Jones - Sunrise',
+                    'name' : 'Sunrise - Norah Jones',
                     'link' : 'https://www.youtube.com/embed/fd02pGJx0s0'    
                 },
                 '2' : {
-                    'name' : 'Banana Pancakes',
+                    'name' : 'Banana Pancakes - Jack Johnson',
                     'link' : 'https://www.youtube.com/embed/m-v-LGOfaKo'
                 },
                 '3' : {
-                    'name' : 'Im Yours',
+                    'name' : 'I’m Yours - Jason Mraz',
                     'link' : 'https://www.youtube.com/embed/EkHTsc9PU2A'
                 },
                 '4' : {
-                    'name' : 'Landslide',
+                    'name' : 'Landslide - Fleetwood Mac',
                     'link' : 'https://www.youtube.com/embed/radHy4HhhNg'
                 },
                 '5' : {
-                    'name' : 'Plain White Ts - Hey There Delilah',
+                    'name' : 'Hey There Delilah - Plain White T’s',
                     'link' : 'https://www.youtube.com/embed/h_m-BjrxmgI'
                 },
                 '6' : {
-                    'name' : 'Kiss Me',
+                    'name' : 'Kiss Me - Sixpence None The Richer',
                     'link' : 'https://www.youtube.com/embed/CAC-onWPMB0'
                 }
             },
             '8' : {
                 '1' : {
-                    'name' : 'Dominic Fike - How Much Is Weed?',
+                    'name' : 'How Much Is Weed? - Dominic Fike?',
                     'link' : 'https://www.youtube.com/embed/4t-zLt3uYcI'    
                 },
                 '2' : {
-                    'name' : '4ever',
+                    'name' : '4EVER - Clairo',
                     'link' : 'https://www.youtube.com/embed/tlGUom_AV4o'
                 },
                 '3' : {
-                    'name' : 'Take a bite',
+                    'name' : 'Take A Bite - beabadoobee',
                     'link' : 'https://www.youtube.com/embed/BCCAKg5bQvU'
                 },
                 '4' : {
-                    'name' : 'Tree Among Shrubs',
+                    'name' : 'Tree Among Shrubs - Men I Trust',
                     'link' : 'https://www.youtube.com/embed/IOquW8xcV0w'
                 },
                 '5' : {
-                    'name' : 'Abigail',
+                    'name' : 'Abigail - Frankie Cosmos',
                     'link' : 'https://www.youtube.com/embed/uIBSPrX-wj8'
                 },
                 '6' : {
-                    'name' : 'Better in the Dark',
+                    'name' : 'Better in the Dark - Jordana, TV Girl',
                     'link' : 'https://www.youtube.com/embed/pqZOj9O8bxc'
                 }
             },
             '9' : {
                 '1' : {
-                    'name' : 'Blue World',
+                    'name' : 'Blue World - Mac Miller',
                     'link' : 'https://www.youtube.com/embed/_GC2wFTCAGY'    
                 },
                 '2' : {
-                    'name' : 'She Wants My Money',
+                    'name' : 'She Wants My Money - Dominic Fike',
                     'link' : 'https://www.youtube.com/embed/0xwzWgjy3Sk'
                 },
                 '3' : {
-                    'name' : 'Lost',
+                    'name' : 'Lost - Frank Ocean',
                     'link' : 'https://www.youtube.com/embed/bZG3YWe7VJw'
                 },
                 '4' : {
-                    'name' : 'Devil in a New Dress',
+                    'name' : 'Devil In A New Dress - Kanye West, Rick Ross',
                     'link' : 'https://www.youtube.com/embed/sk3rpYkiHe8'
                 },
                 '5' : {
-                    'name' : 'Come Back To Earth',
+                    'name' : 'Come Back to Earth - Mac Miller',
                     'link' : 'https://www.youtube.com/embed/W4ocPPhtglU'
                 },
                 '6' : {
-                    'name' : 'Crack Rock',
+                    'name' : 'Crack Rock - Frank Ocean',
                     'link' : 'https://www.youtube.com/embed/IVzzw7Vkiyg'
                 }
             },
             '10' : {
                 '1' : {
-                    'name' : 'Drive By',
+                    'name' : 'Drive By - Train',
                     'link' : 'https://www.youtube.com/embed/oxqnFJ3lp5k'    
                 },
                 '2' : {
-                    'name' : 'Must Get Out',
+                    'name' : 'Must Get Out - Maroon 5',
                     'link' : 'https://www.youtube.com/embed/kSsFN8g9FBM'
                 },
                 '3' : {
-                    'name' : 'Tears Dry On Their Own',
-                    'link' : 'https://www.youtube.com/embed/ojdbDYahiCQ'
-                },
-                '4' : {
-                    'name' : 'The Man who cant be moved',
+                    'name' : 'The Man Who Can’t Be Moved - The Script',
                     'link' : 'https://www.youtube.com/embed/XHPOlxyKA3o'
                 },
+                '4' : {
+                    'name' : 'Tears Dry On Their Own - Amy Winehouse',
+                    'link' : 'https://www.youtube.com/embed/ojdbDYahiCQ'
+                },
                 '5' : {
-                    'name' : 'Smile - Lily Allen',
-                    'link' : 'https://www.youtube.com/embed/0WxDrVUrSvI'
+                    'name' : 'Ain’t It Fun - Paramore',
+                    'link' : 'https://www.youtube.com/embed/EFEmTsfFL5A'
                 },
                 '6' : {
-                    'name' : 'Aint it fun',
-                    'link' : 'https://www.youtube.com/embed/EFEmTsfFL5A'
+                    'name' : 'Smile - Lily Allen',
+                    'link' : 'https://www.youtube.com/embed/0WxDrVUrSvI'
                 }
             },
             '11' : {
