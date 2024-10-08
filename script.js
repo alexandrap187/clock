@@ -788,7 +788,7 @@ document.addEventListener('DOMContentLoaded', function () {
             videoContainer.innerHTML = ''; // Clear any previous video
             videoContainer.appendChild(newIframe); // Add new video iframe to the background    
             
-            backBlur.style.opacity = .8;
+            backBlur.style.opacity = ".8";
 
             // Ensure the image is visible
             img.style.opacity = "1"; // Make sure the image is visible
@@ -816,7 +816,7 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
 
-        backBlur.style.opacity = 0;
+        backBlur.style.opacity = "0";
     
         // Clear the video background container
         videoContainer.innerHTML = ''; 

@@ -76,7 +76,7 @@ body {
 }
 
 .hour {
-    width: 5px; /* Width of hour hand */
+    width: 10px; /* Width of hour hand */
     height: 30%; /* Height as a percentage of the clock size */
     bottom: 50%; /* Position at the center bottom */
     left: 53%; /* Center it horizontally */
@@ -84,7 +84,7 @@ body {
 }
 
 .minute {
-    width: 3.5px; /* Width of minute hand */
+    width: 7px; /* Width of minute hand */
     height: 40%; /* Height as a percentage of the clock size */
     bottom: 50%; /* Position at the center bottom */
     left: 53%; /* Center it horizontally */
@@ -92,7 +92,7 @@ body {
 }
 
 .temmp {
-    width: 2px; /* Width of minute hand */
+    width: 3px; /* Width of minute hand */
     height: 45%; /* Height as a percentage of the clock size */
     bottom: 50%; /* Position at the center bottom */
     left: 53%; /* Center it horizontally */
@@ -102,10 +102,10 @@ body {
 
 .dot {
     position: absolute; /* Position hands absolutely */
-    height: 2vh;
-    width: 2vh;
-    bottom: 47.5%; /* Position at the center bottom */
-    left: 51.1%; /* Center it horizontally */
+    width: 5%;
+    height: 5.5%;
+    bottom: 47.1%; /* Position at the center bottom */
+    left: 50.7%; /* Center it horizontally */
     background-color: #222222; /* Color of the hands */
     border-radius: 50%;
     z-index: 100;
@@ -281,7 +281,7 @@ body {
     .songContainer {
         display: flex;
         flex-direction: row; /* Show songs in a row */
-        padding-top: 10vh;
+        padding-top: 5vh;
         align-items: flex-end; /* Center items vertically */
         padding-bottom: 0vh;
         justify-content: space-evenly; /* Space items evenly */
@@ -301,7 +301,7 @@ body {
         align-items: flex-start; /* Center items vertically */
         justify-content: space-evenly; /* Space items evenly */
         box-sizing: border-box;
-        height: 25vh; /* Allow height to adjust based on content */
+        height: 30vh; /* Allow height to adjust based on content */
         width: 100%; /* Full width */
         overflow-y: hidden; /* Prevent vertical overflow */
         margin-left: 0vw;
@@ -386,11 +386,21 @@ body {
         font-size: 1.8vw; /* Adjust font size for mobile */
         text-align: center; /* Center text alignment */
     }
+
+    .hour {
+        width: 7px;
+    }
+    .minute {
+        width: 6px;
+    }
+    .temmp {
+        width: 3px;
+    }
         
     .dot {
         position: absolute; /* Position hands absolutely */
-        height: 1.75vh;
-        width: 1.75vh;
+        width: 5%;
+        height: 5.5%;
         bottom: 47.3%; /* Position at the center bottom */
         left: 50.9%; /* Center it horizontally */
         background-color: #222222; /* Color of the hands */
