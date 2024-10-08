@@ -85,7 +85,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/IXaMF4FqIkM'    
                 },
                 '2' : {
-                    'name' : 'Searows- End Of The World',
+                    'name' : 'Searows - End Of The World',
                     'link' : 'https://www.youtube.com/embed/e5eik2jffhk'
                 },
                 '3' : {
@@ -263,11 +263,11 @@ document.addEventListener('DOMContentLoaded', function () {
             },
             '11' : {
                 '1' : {
-                    'name' : 'Nine Ball',
+                    'name' : 'Nine Ball - Zach Bryan',
                     'link' : 'https://www.youtube.com/embed/DG3pGOvbIqc'    
                 },
                 '2' : {
-                    'name' : 'Chris Stapleton - You Should Probably Leave',
+                    'name' : 'You Should Probably Leave - Chris Stapleton',
                     'link' : 'https://www.youtube.com/embed/8e7S8l4s1OM'
                 },
                 '3' : {
@@ -275,15 +275,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/aXQ6OOeYG-w'
                 },
                 '4' : {
-                    'name' : 'Luke Combs – Ain’t No Love In Oklahoma',
+                    'name' : 'Ain’t No Love in Oklahoma - Luke Combs',
                     'link' : 'https://www.youtube.com/embed/J6YlaeACE4E'
                 },
                 '5' : {
-                    'name' : 'Zach Bryan - Open the Gate',
+                    'name' : 'Open the Gate - Zach Bryan',
                     'link' : 'https://www.youtube.com/embed/Q6YrY482kXk'
                 },
                 '6' : {
-                    'name' : 'Me On You',
+                    'name' : 'Me On You - Muscadine Bloodline',
                     'link' : 'https://www.youtube.com/embed/N3nTJ6hxDOM'
                 }
             },
@@ -301,15 +301,15 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/r4l9bFqgMaQ'
                 },
                 '4' : {
-                    'name' : 'Brent Faiyaz - CLOUDED',
+                    'name' : 'Clouded - Brent Faiyaz',
                     'link' : 'https://www.youtube.com/embed/FFu_lJ3EvAA'
                 },
                 '5' : {
-                    'name' : 'Tyler, The Creator - 911 / Mr. Lonely',
+                    'name' : '911 / Mr. Lonely - Tyler, The Creator',
                     'link' : 'https://www.youtube.com/embed/khMb3k-Wwvg'
                 },
                 '6' : {
-                    'name' : 'Steve Lacy - N Side',
+                    'name' : 'N Side - Steve Lacy',
                     'link' : 'https://www.youtube.com/embed/udOf9cPnR1A'
                 }
             }
@@ -321,29 +321,29 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/wWptfV0A7jc'    
                 },
                 '2' : {
-                    'name' : 'Paint',
+                    'name' : 'Paint - The Paper Kites',
                     'link' : 'https://www.youtube.com/embed/vo4pZrywaCw'
                 },
                 '3' : {
-                    'name' : 'Tomorrow',
+                    'name' : 'Tomorrow - Shakey Graves',
                     'link' : 'https://www.youtube.com/embed/hQlTBIisIRw'
                 },
                 '4' : {
-                    'name' : 'Yellow Eyes',
+                    'name' : 'Yellow Eyes - Rayland Baxter',
                     'link' : 'https://www.youtube.com/embed/rIVL7_MD5bs'
                 },
                 '5' : {
-                    'name' : 'Oliver Hazard - Dandelion',
+                    'name' : 'Dandelion- Oliver Hazard',
                     'link' : 'https://www.youtube.com/embed/umM9hFsQRow'
                 },
                 '6' : {
-                    'name' : 'Signal Sender',
+                    'name' : 'Signal Sender - Richy Mitch & The Coal Miners',
                     'link' : 'https://www.youtube.com/embed/W6CFu8OtptY'
                 }
             },
             '2' : {
                 '1' : {
-                    'name' : 'Pinegrove - "Alaska"',
+                    'name' : 'Alaska - Pinegrove',
                     'link' : 'https://www.youtube.com/embed/_GB26TguHGc'    
                 },
                 '2' : {
@@ -351,7 +351,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/HVIIP9COGC8'
                 },
                 '3' : {
-                    'name' : 'Is This It',
+                    'name' : 'Is This It - The Strokes',
                     'link' : 'https://www.youtube.com/embed/RHrGj1IyE0Y'
                 },
                 '4' : {
@@ -359,11 +359,11 @@ document.addEventListener('DOMContentLoaded', function () {
                     'link' : 'https://www.youtube.com/embed/c6wCsP16G78'
                 },
                 '5' : {
-                    'name' : 'Pinegrove - Visiting',
+                    'name' : 'Visiting - Pinegrove',
                     'link' : 'https://www.youtube.com/embed/lBKHOqLtQo4'
                 },
                 '6' : {
-                    'name' : 'Tame Impala - Elephant',
+                    'name' : 'Elephant - Tame Impala',
                     'link' : 'https://www.youtube.com/embed/LnKUD_OztRE'
                 }
             },
