@@ -390,8 +390,8 @@ body {
         position: absolute; /* Position hands absolutely */
         height: 1.75vh;
         width: 1.75vh;
-        bottom: 47.5%; /* Position at the center bottom */
-        left: 51.25%; /* Center it horizontally */
+        bottom: 47.3%; /* Position at the center bottom */
+        left: 50.9%; /* Center it horizontally */
         background-color: #222222; /* Color of the hands */
         border-radius: 50%;
         z-index: 100;
