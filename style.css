@@ -257,7 +257,7 @@ body {
     font-family: "Mynerve";
     font-size: 1.5vmin; /* Font size scales with viewport size */
     text-align: center; /* Center text alignment */
-    line-height: 2;
+    line-height: 1.5;
 }
 
 .songOverlay {
