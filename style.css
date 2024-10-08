@@ -97,6 +97,7 @@ body {
     bottom: 50%; /* Position at the center bottom */
     left: 53%; /* Center it horizontally */
     transform: translateX(-50%) rotate(180deg); /* Adjust rotation as needed */
+    opacity: 1;
 }
 
 .dot {

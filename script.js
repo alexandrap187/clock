@@ -738,82 +738,89 @@ document.addEventListener('DOMContentLoaded', function () {
             });
         }
     }
+
+    let secHand = document.getElementsByClassName('temmp')[0];
+
+
+
     const backBlur = document.getElementsByClassName('background-blur')[0];
 
 
     const fastForward = document.querySelectorAll('.fastForward')[0];
 
-    fastForward.addEventListener('click', () => {
+    fastForward.addEventListener('click', async () => {
         let image = fastForward.getElementsByTagName('img')[0];
 
         const imageList = image.src.split('/');
 
         if (imageList[imageList.length - 1] === 'Black.gif') {
+            secHand.style.opacity = "1";
             image.src = './images/SkipTime/Images/black1.png';
         } else {
+            secHand.style.opacity = "0";
             image.src = './images/SkipTime/Gifs/Black.gif';
         }
 
         fastForwarding = !fastForwarding;
     });
 
-        // Loop over each song element
-        songs.forEach(song => {
-            song.addEventListener('click', () => {
-                const iframe = videoContainer.querySelector('iframe'); // Check if there's any video in the background
-                const img = song.querySelector('img'); // Select the image inside the song container
-                
-                // If the video from the same song is playing, toggle it off
-                if (iframe && iframe.src === getSrc(song.id)) {
-                    removeVideos(); // Remove the iframe and halo effect
-                    return; // Exit early, as we toggled the video off
-                }
-    
-                // Otherwise, toggle off other videos and toggle on this one
-                removeVideos(); // Remove videos from other songs
-    
-                // Create a new iframe and add it to the background
-                const newIframe = document.createElement('iframe');
-                newIframe.src = getSrc(song.id); // Get the correct video link
-                newIframe.classList.add('video-background');
-                newIframe.allow = "autoplay; encrypted-media"; // Allow autoplay
-    
-                videoContainer.innerHTML = ''; // Clear any previous video
-                videoContainer.appendChild(newIframe); // Add new video iframe to the background    
-                
-                backBlur.style.opacity = .8;
-    
-                // Ensure the image is visible
-                img.style.opacity = "1"; // Make sure the image is visible
-                img.style.display = "block"; // Ensure the image is displayed if it's hidden
+    // Loop over each song element
+    songs.forEach(song => {
+        song.addEventListener('click', () => {
+            const iframe = videoContainer.querySelector('iframe'); // Check if there's any video in the background
+            const img = song.querySelector('img'); // Select the image inside the song container
+            
+            // If the video from the same song is playing, toggle it off
+            if (iframe && iframe.src === getSrc(song.id)) {
+                removeVideos(); // Remove the iframe and halo effect
+                return; // Exit early, as we toggled the video off
+            }
+
+            // Otherwise, toggle off other videos and toggle on this one
+            removeVideos(); // Remove videos from other songs
+
+            // Create a new iframe and add it to the background
+            const newIframe = document.createElement('iframe');
+            newIframe.src = getSrc(song.id); // Get the correct video link
+            newIframe.classList.add('video-background');
+            newIframe.allow = "autoplay; encrypted-media"; // Allow autoplay
+
+            videoContainer.innerHTML = ''; // Clear any previous video
+            videoContainer.appendChild(newIframe); // Add new video iframe to the background    
+            
+            backBlur.style.opacity = .8;
+
+            // Ensure the image is visible
+            img.style.opacity = "1"; // Make sure the image is visible
+            img.style.display = "block"; // Ensure the image is displayed if it's hidden
 
 
-                // Add halo class to the clicked song's image
-                img.classList.add('halo');
-            });
+            // Add halo class to the clicked song's image
+            img.classList.add('halo');
         });
+    });
+
+
+    function getSrc(songId) {
+        let songNo = songId.split('-')[1];
+        return songLinks[timeOfDay][hours % 12 === 0 ? '12' : hours % 12][songNo].link + "?autoplay=1&controls=0&rel=0";
+    }
+
+    // Function to remove any playing video and clear effects
+    function removeVideos() {
+        // Iterate over all song elements and remove iframe and halo effects
+        songs.forEach(song => {
+            const img = song.querySelector('img');
+            if (img) {
+                img.classList.remove('halo'); // Remove halo for all songs
+            }
+        });
+
+        backBlur.style.opacity = 0;
     
-
-        function getSrc(songId) {
-            let songNo = songId.split('-')[1];
-            return songLinks[timeOfDay][hours % 12 === 0 ? '12' : hours % 12][songNo].link + "?autoplay=1&controls=0&rel=0";
-        }
-
-        // Function to remove any playing video and clear effects
-        function removeVideos() {
-            // Iterate over all song elements and remove iframe and halo effects
-            songs.forEach(song => {
-                const img = song.querySelector('img');
-                if (img) {
-                    img.classList.remove('halo'); // Remove halo for all songs
-                }
-            });
-
-            backBlur.style.opacity = 0;
-        
-            // Clear the video background container
-            videoContainer.innerHTML = ''; 
-        }
+        // Clear the video background container
+        videoContainer.innerHTML = ''; 
+    }
 
     
 
