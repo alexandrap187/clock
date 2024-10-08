@@ -1,6 +1,7 @@
 body {
     overflow: hidden;
     background-color: #F5F5F5;
+    pointer-events: none;
 }
 
 .container {
@@ -86,6 +87,7 @@ body {
     background-size: contain; /* Scale the image to fit the clock div */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-position: center; /* Center the background image */
+    margin-right: -1.5vw;
 
 }
 
@@ -108,6 +110,7 @@ body {
     background-repeat: no-repeat;
     width: 19.8vmin; /* Set width to a proportional size based on viewport */
     height: 24vmin; /* Set height to a proportional size based on viewport */
+    pointer-events: auto;
 }
 
 .video-container {
@@ -130,7 +133,7 @@ body {
     width: 100vw;
     height: 100vh;
     transform: translate(-50%, -50%);
-    pointer-events: none; /* Prevent interaction with the video */
+    pointer-events: auto; /* Prevent interaction with the video */
 }
 
 
@@ -196,7 +199,7 @@ body {
     width: 100%;
     height: 100%;
     z-index: -1; /* Ensure it's behind all other elements */
-   /* background: rgb(241, 253, 255); /* A semi-transparent white background */
+   /* background: rgb(36, 36, 36); /* A semi-transparent white background */
     opacity: .7;
     backdrop-filter: blur(1100px); /* Apply blur effect */
 }
@@ -289,6 +292,7 @@ body {
         background-size: contain; /* Scale the image to fit the clock div */
         background-repeat: no-repeat; /* Prevent the image from repeating */
         background-position: center; /* Center the background image */
+        pointer-events: auto;
     
     }
     

@@ -696,7 +696,7 @@ document.addEventListener('DOMContentLoaded', function () {
     function setBackground() {
         let background = document.body.style;
 
-        background.backgroundColor = timeOfDay === "pm" ? "#1E3E55" : "#F1FDFF";
+        background.backgroundColor = timeOfDay === "pm" ? "#222222" : "#F1FDFF";
     }
 
     setBackground();
@@ -777,6 +777,7 @@ document.addEventListener('DOMContentLoaded', function () {
     
                 videoContainer.innerHTML = ''; // Clear any previous video
                 videoContainer.appendChild(newIframe); // Add new video iframe to the background
+
     
                 
     
