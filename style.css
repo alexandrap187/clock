@@ -7,7 +7,7 @@ body {
     display: flex; /* Use flexbox to align children in a row */
     overflow: hidden;
     justify-content: space-evenly; /* Space between columns */
-    align-items: flex-start; /* Align items vertically in the center */
+    align-items: center; /* Align items vertically in the center */
     height: 100vh; /* Set the height to fill the viewport */
 }
 
@@ -46,11 +46,10 @@ body {
 }
 
 .center-container {
-    margin-top: 13vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     width: 38%;
 }
 
@@ -134,6 +133,10 @@ body {
     top: 53%; /* Adjust this value to position vertically as needed */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for centering */
+}
+
+.tn {
+    width: 5%;
 }
 
 /* You can add more specific styles for different .numb images if needed */
@@ -268,7 +271,7 @@ body {
 }
 
 .song img.halo {
-    box-shadow: 0px 0px 1000px white;
+    box-shadow: 0px 0px 100px white;
     box-sizing: border-box; /* Ensures border is part of the element's width */
 }
 
@@ -331,7 +334,6 @@ body {
         display: flex;
         flex-direction: column; /* Stack items vertically */
         align-items: center; /* Center items horizontally */
-        margin-top: 0vh;
     }
 
     .fastForward {

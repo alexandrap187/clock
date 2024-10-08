@@ -645,6 +645,9 @@ document.addEventListener('DOMContentLoaded', function () {
     let seconds = now.getSeconds();
     let minutes = now.getMinutes();
     let hours = now.getHours();
+    let hrTape = document.getElementsByClassName('tn')[0];
+    let todTape = document.getElementsByClassName('tod')[0];
+
 
     // Get all song elements
     const songs = document.querySelectorAll('.song');
@@ -703,7 +706,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setBackground();
     
     async function setSongs(hour, firstSongs) {
-        // setTimeTape(hour);
+        setTimeTape(hour);
 
         if (!firstSongs) {
             await fade(-.01);
@@ -718,14 +721,29 @@ document.addEventListener('DOMContentLoaded', function () {
             image.src = "images/" + timeOfDay + "/" + (hour === 0 ? 12 : hour) + "/" + songNumber++ + ".png";
         });
 
+        await new Promise(resolve => setTimeout(resolve, 10));  
+
         await fade(.01);
     }
 
     function setTimeTape(hour) {
         let displayHour = hour % 12 === 0 ? 12 : hour % 12; // Convert to 12-hour format
-        let imagePath = `./images/TimeTape/${displayHour}${timeOfDay}.png`; // Construct the image path
+
+        if (displayHour < 10) {
+            hrTape.style.width = "67%";
+        } else {
+            hrTape.style.width = "90%";
+        }
+
+        let imagePath = `./images/TimeTape/${displayHour}.png`; // Construct the image path
     
-        tape.style.backgroundImage = `url('${imagePath}')`;
+        hrTape.src = imagePath;
+
+        imagePath = `./images/TimeTape/${timeOfDay}.png`; // Construct the image path
+
+        todTape.style.width = "110%";
+
+        todTape.src = imagePath;
     }
 
     async function fade(change) {
