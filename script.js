@@ -842,6 +842,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 firstClick = false;
             }
             //frameAnimation(.01);
+            //comment
             
             backBlur.style.opacity = ".8";
 
