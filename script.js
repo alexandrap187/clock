@@ -798,6 +798,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
     });
 
+    async function frameAnimation(change) {
+        let opacity = change > 0 ? 0 : 1;
+        while (opacity > -.01 && opacity < 1.01) {
+            await new Promise(resolve => setTimeout(resolve, 5));  
+            opacity += change;
+            videoContainer.style.opacity = opacity;
+        }
+
+    }
+
     // Loop over each song element
     songs.forEach(song => {
         song.addEventListener('click', () => {
@@ -823,6 +833,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
             videoContainer.innerHTML = ''; // Clear any previous video
             videoContainer.appendChild(newIframe); // Add new video iframe to the background    
+
+            frameAnimation(.0001);
 
             playAnimation();
             
@@ -869,6 +881,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Function to remove any playing video and clear effects
     function removeVideos() {
+
+        frameAnimation(-.01);
         // Iterate over all song elements and remove iframe and halo effects
         songs.forEach(song => {
             const img = song.querySelector('img');
