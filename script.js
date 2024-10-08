@@ -769,7 +769,6 @@ document.addEventListener('DOMContentLoaded', function () {
             opacity += change;
             secHand.style.opacity = opacity;
         }
-
     }
 
     const backBlur = document.getElementsByClassName('background-blur')[0];
@@ -842,9 +841,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const play = document.getElementsByClassName("play")[0];
     let playGif = play.getElementsByTagName("img")[0];
+
+    async function fadePlay(change) {
+        let opacity = change > 0 ? 0 : 1;
+        while (opacity > -.01 && opacity < 1.01) {
+            await new Promise(resolve => setTimeout(resolve, 5));  
+            opacity += change;
+            playGif.style.opacity = opacity;
+        }
+    }
+
     async function playAnimation() {
-        playGif.src = './playAnim.gif';
-        await new Promise(resolve => setTimeout(resolve, 3000));  
+        if (window.innerWidth < 500) {
+            playGif.src = './playAnim.gif';
+            await fadePlay(.01);
+        }
+        await new Promise(resolve => setTimeout(resolve, 5200));  
+        await fadePlay(-.01);
         playGif.src = '';
     }
 

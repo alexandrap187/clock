@@ -108,7 +108,7 @@ body {
     position: absolute; /* Position hands absolutely */
     width: 5%;
     height: 5.5%;
-    bottom: 47.1%; /* Position at the center bottom */
+    bottom: 48.1%; /* Position at the center bottom */
     left: 50.7%; /* Center it horizontally */
     background-color: #222222; /* Color of the hands */
     border-radius: 50%;
@@ -486,6 +486,7 @@ body {
         left: 50%;
         top: 50%;
         transform: translate(130%, 95%);
+        opacity: 0;
     }
 
 }
