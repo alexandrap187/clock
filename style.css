@@ -251,9 +251,7 @@ body {
 }
 
 .song img.halo {
-    border: 5px solid white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px white;
+    box-shadow: 0px 0px 100px #FFD700;
     box-sizing: border-box; /* Ensures border is part of the element's width */
 }
 
