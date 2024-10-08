@@ -266,7 +266,7 @@ body {
     .songContainer {
         display: flex;
         flex-direction: row; /* Show songs in a row */
-        padding-top: 4vh;
+        padding-top: 8vh;
         align-items: flex-end; /* Center items vertically */
         padding-bottom: 0vh;
         justify-content: space-evenly; /* Space items evenly */
@@ -374,10 +374,10 @@ body {
 
     .hand {
         position: absolute; /* Allow precise positioning */
-        left: 51%; /* Center horizontally */
+        left: 50.255%; /* Center horizontally */
         transform-origin: bottom center; /* Rotate around the bottom */
         width: 2%; /* Set the width of the hand */
-        bottom: 49%; /* All hands start from the same position */
+        bottom: 52.6%; /* All hands start from the same position */
         border-radius: 5px;
         background-color: #222222; /* Example color for visibility */
     
@@ -385,26 +385,26 @@ body {
     
     .second {
         width: 2px;
-        height: 22%; /* Length of the second hand */
+        height: 15%; /* Length of the second hand */
     }
     
     .minute {
         width: 3.5px;
-        height: 19%; /* Length of the minute hand */
+        height: 14%; /* Length of the minute hand */
     }
     
     .hour {
         width: 5px;
-        height: 15%; /* Length of the hour hand */
+        height: 9%; /* Length of the hour hand */
     }
     
     .center-dot {
-        width: 1.2vw;
-        height: 1.2vw;
+        width: 4vw;
+        height: 4vw;
         background-color: #222222;
         position: absolute;
-        top: 50.9%;
-        left: 51.08%;
+        top: 47.2%;
+        left: 50.28%;
         transform: translate(-50%, -50%);
         border-radius: 50%;
         z-index: 4; /* Ensure the center dot is on top */
