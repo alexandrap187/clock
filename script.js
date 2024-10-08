@@ -669,15 +669,14 @@ document.addEventListener('DOMContentLoaded', function () {
             interval = 1;
         }
 
-
         const curTime = now.getSeconds() + (now.getMinutes() * 60) + (now.getHours() * 60 * 60) + addedTime;
 
         seconds = curTime % 60;
 
-        const degSecs = (curTime - addedTime) % 60;
-
-        const secondsDegrees = ((degSecs / 60) * 360) ; // 90 degrees offset
-        secondHand.style.transform = `rotate(${secondsDegrees}deg)`;    
+        if (!fastForwarding) {
+            const secondsDegrees = ((seconds / 60) * 360) ; // 90 degrees offset
+            secondHand.style.transform = `rotate(${secondsDegrees}deg)`;        
+        }
 
 
         minutes = Math.floor(curTime/60) % 60;
