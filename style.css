@@ -60,11 +60,10 @@ body {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    width: 60px;
-    height: 60px;
+    width: 45px;
+    height: 45px;
     cursor: pointer;
     z-index: 5000;
-    outline: 2px solid red;
 }
 
 .about-icon img {
