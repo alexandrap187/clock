@@ -151,7 +151,7 @@ body {
     
     object-fit: contain;
     width: 6.5%; /* Decrease size to 5% or adjust as necessary */
-    top: 53%; /* Adjust this value to position vertically as needed */
+    top: 54%; /* Adjust this value to position vertically as needed */
     left: 50%; /* Center horizontally */
     transform: translateX(-50%); /* Adjust for centering */
 }
